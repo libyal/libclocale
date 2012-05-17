@@ -1,8 +1,13 @@
 TODO
+* Missing caseless wide string compare in Cygwin
+  when WINAPI is enabled
 * update include header
 * update man pages
 * update msvscpp
 * add borland5 and codegear files
+
+20120517
+* worked on WINVER < 0x0501 build
 
 20120507
 * Worked on stand-alone version

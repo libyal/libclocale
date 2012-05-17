@@ -57,7 +57,7 @@ int libclocale_GetLocaleInfoA(
 	int result             = 0;
 
 	library_handle = LoadLibrary(
-	                  _LIBCLOCALE_SYSTEM_STRING( "kernel32.dll" ) );
+	                  _LIBCSTRING_SYSTEM_STRING( "kernel32.dll" ) );
 
 	if( library_handle == NULL )
 	{
