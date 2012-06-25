@@ -30,12 +30,5 @@
  */
 #define LIBCLOCALE_VERSION_STRING			"@VERSION@"
 
-/* The print data flags
- */
-enum LIBCLOCALE_NOTIFY_PRINT_DATA_FLAGS
-{
-	LIBCLOCALE_PRINT_DATA_FLAG_GROUP_DATA		= 0x01,
-};
-
 #endif
 

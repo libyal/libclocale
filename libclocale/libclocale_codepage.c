@@ -90,6 +90,8 @@ int libclocale_codepage_set(
 	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_874 )
 	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_932 )
 	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_936 )
+	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_949 )
+	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_950 )
 	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_1250 )
 	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_1251 )
 	 && ( codepage != LIBCLOCALE_CODEPAGE_WINDOWS_1252 )
@@ -446,7 +448,7 @@ int libclocale_codepage_copy_from_string(
 					else if( ( string[ string_index + 1 ] == '5' )
 					      && ( string[ string_index + 2 ] == '0' ) )
 					{
-						*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_949;
+						*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_950;
 					}
 					break;
 
@@ -845,7 +847,7 @@ int libclocale_codepage_copy_from_string_wide(
 					else if( ( string[ string_index + 1 ] == (wchar_t) '5' )
 					      && ( string[ string_index + 2 ] == (wchar_t) '0' ) )
 					{
-						*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_949;
+						*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_950;
 					}
 					break;
 

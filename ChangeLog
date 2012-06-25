@@ -1,10 +1,24 @@
 TODO
+* language
+  - complete language support
+  - move language support into library
+* tests
+  - codepage from string
+  - language from string
 * Missing caseless wide string compare in Cygwin
   when WINAPI is enabled
 * update include header
+  - codepages
+  - LCIDs
+* add support for OEM codepages
 * update man pages
-* update msvscpp
+* update msvscpp files
 * add borland5 and codegear files
+* create tool to print locale info for testing
+
+20120625
+* updated dependencies
+* added codepage windows 949 and 950 support
 
 20120517
 * worked on WINVER < 0x0501 build
