@@ -71,7 +71,7 @@ int libclocale_language_identifier_copy_from_string(
 
 		return( -1 );
 	}
-	*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_UNDEFINED;
+	*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_UNDEFINED;
 
 	if( string_length >= 2 )
 	{
@@ -83,7 +83,7 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'R':
 					case (libcstring_system_character_t) 'r':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_AR;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_AR;
 						break;
 
 					default:
@@ -97,7 +97,7 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'G':
 					case (libcstring_system_character_t) 'g':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_BG;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_BG;
 						break;
 
 					default:
@@ -111,12 +111,12 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'A':
 					case (libcstring_system_character_t) 'a':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_CA;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_CA;
 						break;
 
 					case (libcstring_system_character_t) 'S':
 					case (libcstring_system_character_t) 's':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_CS;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_CS;
 						break;
 
 					default:
@@ -130,12 +130,12 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'A':
 					case (libcstring_system_character_t) 'a':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_DA;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_DA;
 						break;
 
 					case (libcstring_system_character_t) 'E':
 					case (libcstring_system_character_t) 'e':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_DE;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_DE;
 						break;
 
 					default:
@@ -149,17 +149,17 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'L':
 					case (libcstring_system_character_t) 'l':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_EL;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_EL;
 						break;
 
 					case (libcstring_system_character_t) 'N':
 					case (libcstring_system_character_t) 'n':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_EN;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_EN;
 						break;
 
 					case (libcstring_system_character_t) 'S':
 					case (libcstring_system_character_t) 's':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_ES;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_ES;
 						break;
 
 					default:
@@ -173,12 +173,12 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'I':
 					case (libcstring_system_character_t) 'i':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_FI;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_FI;
 						break;
 
 					case (libcstring_system_character_t) 'R':
 					case (libcstring_system_character_t) 'r':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_FR;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_FR;
 						break;
 
 					default:
@@ -197,17 +197,17 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'E':
 					case (libcstring_system_character_t) 'e':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_HE;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_HE;
 						break;
 
 					case (libcstring_system_character_t) 'R':
 					case (libcstring_system_character_t) 'r':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_HR;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_HR;
 						break;
 
 					case (libcstring_system_character_t) 'U':
 					case (libcstring_system_character_t) 'u':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_HU;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_HU;
 						break;
 
 					default:
@@ -221,12 +221,12 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'S':
 					case (libcstring_system_character_t) 's':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_IS;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_IS;
 						break;
 
 					case (libcstring_system_character_t) 'T':
 					case (libcstring_system_character_t) 't':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_IT;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_IT;
 						break;
 
 					default:
@@ -240,7 +240,7 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'A':
 					case (libcstring_system_character_t) 'a':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_JA;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_JA;
 						break;
 
 					default:
@@ -254,7 +254,7 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'O':
 					case (libcstring_system_character_t) 'o':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_KO;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_KO;
 						break;
 
 					default:
@@ -278,12 +278,12 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'L':
 					case (libcstring_system_character_t) 'l':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_NL;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_NL;
 						break;
 
 					case (libcstring_system_character_t) 'O':
 					case (libcstring_system_character_t) 'o':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_NO;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_NO;
 						break;
 
 					default:
@@ -302,12 +302,12 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'L':
 					case (libcstring_system_character_t) 'l':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_PL;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_PL;
 						break;
 
 					case (libcstring_system_character_t) 'T':
 					case (libcstring_system_character_t) 't':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_PT;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_PT;
 						break;
 
 					default:
@@ -326,17 +326,17 @@ int libclocale_language_identifier_copy_from_string(
 				{
 					case (libcstring_system_character_t) 'M':
 					case (libcstring_system_character_t) 'm':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_RM;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_RM;
 						break;
 
 					case (libcstring_system_character_t) 'O':
 					case (libcstring_system_character_t) 'o':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_RO;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_RO;
 						break;
 
 					case (libcstring_system_character_t) 'U':
 					case (libcstring_system_character_t) 'u':
-						*language_identifier = LANGUAGE_HANDLE_IDENTIFIER_RU;
+						*language_identifier = LIBCLOCALE_LANGUAGE_IDENTIFIER_RU;
 						break;
 
 					default:
@@ -380,7 +380,7 @@ int libclocale_language_identifier_copy_from_string(
 				break;
 		}
 	}
-	if( *language_identifier != LANGUAGE_HANDLE_IDENTIFIER_UNDEFINED )
+	if( *language_identifier != LIBCLOCALE_LANGUAGE_IDENTIFIER_UNDEFINED )
 	{
 		return( 1 );
 	}
@@ -785,349 +785,349 @@ const libcstring_system_character_t *libclocale_language_identifier_to_string(
 {
 	switch( language_identifier )
 	{
-		case LANGUAGE_HANDLE_IDENTIFIER_AR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_AR:
 			return( _LIBCSTRING_SYSTEM_STRING( "ar" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_BG:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_BG:
 			return( _LIBCSTRING_SYSTEM_STRING( "bg" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_CA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_CA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ca" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ZH_HANS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ZH_HANS:
 			return( _LIBCSTRING_SYSTEM_STRING( "zh-Hans" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_CS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_CS:
 			return( _LIBCSTRING_SYSTEM_STRING( "cs" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_DA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_DA:
 			return( _LIBCSTRING_SYSTEM_STRING( "da" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_DE:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_DE:
 			return( _LIBCSTRING_SYSTEM_STRING( "de" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_EL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_EL:
 			return( _LIBCSTRING_SYSTEM_STRING( "el" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_EN:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_EN:
 			return( _LIBCSTRING_SYSTEM_STRING( "en" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ES:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ES:
 			return( _LIBCSTRING_SYSTEM_STRING( "es" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_FI:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_FI:
 			return( _LIBCSTRING_SYSTEM_STRING( "fi" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_FR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_FR:
 			return( _LIBCSTRING_SYSTEM_STRING( "fr" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HE:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HE:
 			return( _LIBCSTRING_SYSTEM_STRING( "he" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HU:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HU:
 			return( _LIBCSTRING_SYSTEM_STRING( "hu" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_IS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_IS:
 			return( _LIBCSTRING_SYSTEM_STRING( "is" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_IT:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_IT:
 			return( _LIBCSTRING_SYSTEM_STRING( "it" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_JA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_JA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ja" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KO:
 			return( _LIBCSTRING_SYSTEM_STRING( "ko" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_NL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_NL:
 			return( _LIBCSTRING_SYSTEM_STRING( "nl" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_NO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_NO:
 			return( _LIBCSTRING_SYSTEM_STRING( "no" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_PL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_PL:
 			return( _LIBCSTRING_SYSTEM_STRING( "pl" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_PT:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_PT:
 			return( _LIBCSTRING_SYSTEM_STRING( "pt" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_RM:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_RM:
 			return( _LIBCSTRING_SYSTEM_STRING( "rm" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_RO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_RO:
 			return( _LIBCSTRING_SYSTEM_STRING( "ro" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_RU:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_RU:
 			return( _LIBCSTRING_SYSTEM_STRING( "ru" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HR:
 			return( _LIBCSTRING_SYSTEM_STRING( "hr" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SK:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SK:
 			return( _LIBCSTRING_SYSTEM_STRING( "sk" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SQ:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SQ:
 			return( _LIBCSTRING_SYSTEM_STRING( "sq" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SV:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SV:
 			return( _LIBCSTRING_SYSTEM_STRING( "sv" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TH:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TH:
 			return( _LIBCSTRING_SYSTEM_STRING( "th" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TR:
 			return( _LIBCSTRING_SYSTEM_STRING( "tr" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_UR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_UR:
 			return( _LIBCSTRING_SYSTEM_STRING( "ur" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ID:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ID:
 			return( _LIBCSTRING_SYSTEM_STRING( "id" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_UK:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_UK:
 			return( _LIBCSTRING_SYSTEM_STRING( "uk" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_BE:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_BE:
 			return( _LIBCSTRING_SYSTEM_STRING( "be" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SL:
 			return( _LIBCSTRING_SYSTEM_STRING( "sl" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ET:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ET:
 			return( _LIBCSTRING_SYSTEM_STRING( "et" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_LV:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_LV:
 			return( _LIBCSTRING_SYSTEM_STRING( "lv" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_LT:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_LT:
 			return( _LIBCSTRING_SYSTEM_STRING( "lt" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TG:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TG:
 			return( _LIBCSTRING_SYSTEM_STRING( "tg" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_FA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_FA:
 			return( _LIBCSTRING_SYSTEM_STRING( "fa" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_VI:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_VI:
 			return( _LIBCSTRING_SYSTEM_STRING( "vi" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HY:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HY:
 			return( _LIBCSTRING_SYSTEM_STRING( "hy" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_AZ:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_AZ:
 			return( _LIBCSTRING_SYSTEM_STRING( "az" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_EU:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_EU:
 			return( _LIBCSTRING_SYSTEM_STRING( "eu" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HSB:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HSB:
 			return( _LIBCSTRING_SYSTEM_STRING( "hsb" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MK:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MK:
 			return( _LIBCSTRING_SYSTEM_STRING( "mk" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TN:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TN:
 			return( _LIBCSTRING_SYSTEM_STRING( "tn" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_XH:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_XH:
 			return( _LIBCSTRING_SYSTEM_STRING( "xh" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ZU:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ZU:
 			return( _LIBCSTRING_SYSTEM_STRING( "zu" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_AF:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_AF:
 			return( _LIBCSTRING_SYSTEM_STRING( "af" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ka" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_FO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_FO:
 			return( _LIBCSTRING_SYSTEM_STRING( "fo" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HI:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HI:
 			return( _LIBCSTRING_SYSTEM_STRING( "hi" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MT:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MT:
 			return( _LIBCSTRING_SYSTEM_STRING( "mt" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SE:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SE:
 			return( _LIBCSTRING_SYSTEM_STRING( "se" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_GA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_GA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ga" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MS:
 			return( _LIBCSTRING_SYSTEM_STRING( "ms" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KK:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KK:
 			return( _LIBCSTRING_SYSTEM_STRING( "kk" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KY:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KY:
 			return( _LIBCSTRING_SYSTEM_STRING( "ky" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SW:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SW:
 			return( _LIBCSTRING_SYSTEM_STRING( "sw" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TK:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TK:
 			return( _LIBCSTRING_SYSTEM_STRING( "tk" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_UZ:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_UZ:
 			return( _LIBCSTRING_SYSTEM_STRING( "uz" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TT:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TT:
 			return( _LIBCSTRING_SYSTEM_STRING( "tt" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_BN:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_BN:
 			return( _LIBCSTRING_SYSTEM_STRING( "bn" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_PA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_PA:
 			return( _LIBCSTRING_SYSTEM_STRING( "pa" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_GU:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_GU:
 			return( _LIBCSTRING_SYSTEM_STRING( "gu" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_OR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_OR:
 			return( _LIBCSTRING_SYSTEM_STRING( "or" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ta" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TE:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TE:
 			return( _LIBCSTRING_SYSTEM_STRING( "te" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KN:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KN:
 			return( _LIBCSTRING_SYSTEM_STRING( "kn" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ML:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ML:
 			return( _LIBCSTRING_SYSTEM_STRING( "ml" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_AS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_AS:
 			return( _LIBCSTRING_SYSTEM_STRING( "as" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MR:
 			return( _LIBCSTRING_SYSTEM_STRING( "mr" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SA:
 			return( _LIBCSTRING_SYSTEM_STRING( "sa" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MN:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MN:
 			return( _LIBCSTRING_SYSTEM_STRING( "mn" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_BO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_BO:
 			return( _LIBCSTRING_SYSTEM_STRING( "bo" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_CY:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_CY:
 			return( _LIBCSTRING_SYSTEM_STRING( "cy" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KM:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KM:
 			return( _LIBCSTRING_SYSTEM_STRING( "km" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_LO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_LO:
 			return( _LIBCSTRING_SYSTEM_STRING( "lo" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_GL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_GL:
 			return( _LIBCSTRING_SYSTEM_STRING( "gl" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KOK:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KOK:
 			return( _LIBCSTRING_SYSTEM_STRING( "kok" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SYR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SYR:
 			return( _LIBCSTRING_SYSTEM_STRING( "syr" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SI:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SI:
 			return( _LIBCSTRING_SYSTEM_STRING( "si" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_IU:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_IU:
 			return( _LIBCSTRING_SYSTEM_STRING( "iu" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_AM:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_AM:
 			return( _LIBCSTRING_SYSTEM_STRING( "am" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_TZM:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_TZM:
 			return( _LIBCSTRING_SYSTEM_STRING( "tzm" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_NE:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_NE:
 			return( _LIBCSTRING_SYSTEM_STRING( "ne" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_FY:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_FY:
 			return( _LIBCSTRING_SYSTEM_STRING( "fy" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_PS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_PS:
 			return( _LIBCSTRING_SYSTEM_STRING( "ps" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_FIL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_FIL:
 			return( _LIBCSTRING_SYSTEM_STRING( "fil" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_DV:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_DV:
 			return( _LIBCSTRING_SYSTEM_STRING( "dv" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_HA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_HA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ha" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_YO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_YO:
 			return( _LIBCSTRING_SYSTEM_STRING( "yo" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_QUZ:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_QUZ:
 			return( _LIBCSTRING_SYSTEM_STRING( "quz" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_NSO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_NSO:
 			return( _LIBCSTRING_SYSTEM_STRING( "nso" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_BA:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_BA:
 			return( _LIBCSTRING_SYSTEM_STRING( "ba" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_LB:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_LB:
 			return( _LIBCSTRING_SYSTEM_STRING( "lb" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_KL:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_KL:
 			return( _LIBCSTRING_SYSTEM_STRING( "kl" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_IG:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_IG:
 			return( _LIBCSTRING_SYSTEM_STRING( "ig" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_II:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_II:
 			return( _LIBCSTRING_SYSTEM_STRING( "ii" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_ARN:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_ARN:
 			return( _LIBCSTRING_SYSTEM_STRING( "arn" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MOH:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MOH:
 			return( _LIBCSTRING_SYSTEM_STRING( "moh" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_BR:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_BR:
 			return( _LIBCSTRING_SYSTEM_STRING( "br" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_UG:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_UG:
 			return( _LIBCSTRING_SYSTEM_STRING( "ug" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_MI:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_MI:
 			return( _LIBCSTRING_SYSTEM_STRING( "mi" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_OC:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_OC:
 			return( _LIBCSTRING_SYSTEM_STRING( "oc" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_CO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_CO:
 			return( _LIBCSTRING_SYSTEM_STRING( "co" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_GSW:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_GSW:
 			return( _LIBCSTRING_SYSTEM_STRING( "gsw" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_SAH:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_SAH:
 			return( _LIBCSTRING_SYSTEM_STRING( "sah" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_QUT:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_QUT:
 			return( _LIBCSTRING_SYSTEM_STRING( "qut" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_RW:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_RW:
 			return( _LIBCSTRING_SYSTEM_STRING( "rw" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_WO:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_WO:
 			return( _LIBCSTRING_SYSTEM_STRING( "wo" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_PRS:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_PRS:
 			return( _LIBCSTRING_SYSTEM_STRING( "prs" ) );
 
-		case LANGUAGE_HANDLE_IDENTIFIER_GD:
+		case LIBCLOCALE_LANGUAGE_IDENTIFIER_GD:
 			return( _LIBCSTRING_SYSTEM_STRING( "gd" ) );
 
 /* TODO */

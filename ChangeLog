@@ -16,6 +16,9 @@ TODO
 * add borland5 and codegear files
 * create tool to print locale info for testing
 
+20120630
+* updated dependencies
+
 20120625
 * updated dependencies
 * added codepage windows 949 and 950 support

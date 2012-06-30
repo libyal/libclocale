@@ -2,7 +2,7 @@ AC_PREREQ( 2.59 )
 
 AC_INIT(
  [libclocale],
- [20120517],
+ [20120630],
  [joachim.metz@gmail.com])
 
 AC_CONFIG_SRCDIR(
