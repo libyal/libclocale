@@ -9,12 +9,12 @@
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This software is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -34,7 +34,7 @@ extern "C" {
 
 /* The codepage feature flag definitions
  */
-enum LIBCLOCALE_CODEPAGE_FEATURE_FLAGS
+enum LIBCLOCALE_CODEPAGES_FEATURE_FLAGS
 {
 	LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859		= 0x00000001UL,
 	LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_KOI8		= 0x00000002UL,
@@ -43,7 +43,7 @@ enum LIBCLOCALE_CODEPAGE_FEATURE_FLAGS
 
 /* The codepage set definitions
  */
-enum LIBCLOCALE_CODEPAGE_SETS
+enum LIBCLOCALE_CODEPAGES_SETS
 {
 	LIBCLOCALE_CODEPAGE_SET_GENERIC				= 1,
 	LIBCLOCALE_CODEPAGE_SET_ISO_8859			= (int) 'i',
@@ -53,7 +53,7 @@ enum LIBCLOCALE_CODEPAGE_SETS
 
 /* The codepage definitions
  */
-enum LIBCLOCALE_CODEPAGES
+enum LIBCLOCALE_CODEPAGESS
 {
 	LIBCLOCALE_CODEPAGE_ASCII				= 20127,
 

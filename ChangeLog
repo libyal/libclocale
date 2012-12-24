@@ -16,6 +16,12 @@ TODO
 * add borland5 and codegear files
 * create tool to print locale info for testing
 
+20121224
+* added .gitignore
+* updated pc file
+* updated dpkg files
+* updated msvscpp files
+
 20120919
 * updated dependencies
 

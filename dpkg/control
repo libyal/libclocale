@@ -1,22 +1,22 @@
-Source: libcnotify
+Source: libclocale
 Section: unknown
 Priority: extra
 Maintainer: Joachim Metz <joachim.metz@gmail.com>
 Build-Depends: debhelper (>= 7), autotools-dev
 Standards-Version: 3.8.3
-Homepage: http://code.google.com/p/libclibs/
+Homepage: http://code.google.com/p/libclocale/
 
-Package: libcnotify
+Package: libclocale
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Library to support cross-platform C notification functions
- libcnotify is a library to support cross-platform C notification functions.
+Description: Library to support cross-platform C locale functions
+ libclocale is a library to support cross-platform C locale functions.
 
-Package: libcnotify-dev
+Package: libclocale-dev
 Section: libdevel
 Architecture: any
-Depends: libcnotify (= ${Source-Version})
-Description: Header files and libraries for developing applications for libcnotify
- Header files and libraries for developing applications for libcnotify.
+Depends: libclocale (= ${Source-Version})
+Description: Header files and libraries for developing applications for libclocale
+ Header files and libraries for developing applications for libclocale.
 

@@ -13,7 +13,6 @@ libclocale_la_SOURCES = \
 	libclocale_extern.h \
 	libclocale_libcerror.h \
 	libclocale_libcstring.h \
-	libclocale_language.c libclocale_language.h \
 	libclocale_locale.c libclocale_locale.h \
 	libclocale_support.c libclocale_support.h \
 	libclocale_unused.h

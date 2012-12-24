@@ -93,3 +93,4 @@ Makefile.in
 /libclocale/libclocale.h
 # Local library dependencies specific files
 /libcerror
+/libcstring
