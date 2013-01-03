@@ -16,6 +16,10 @@ TODO
 * add borland5 and codegear files
 * create tool to print locale info for testing
 
+20130103
+* changes to .gitignore
+* 2013 update
+
 20121224
 * added .gitignore
 * updated pc file

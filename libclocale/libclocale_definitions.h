@@ -34,11 +34,11 @@
  */
 #else
 
-#define LIBCLOCALE_VERSION			20121224
+#define LIBCLOCALE_VERSION			20130103
 
 /* The libclocale version string
  */
-#define LIBCLOCALE_VERSION_STRING		"20121224"
+#define LIBCLOCALE_VERSION_STRING		"20130103"
 
 #endif
 
