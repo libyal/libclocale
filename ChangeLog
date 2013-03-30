@@ -12,9 +12,11 @@ TODO
   - LCIDs
 * add support for OEM codepages
 * update man pages
-* update msvscpp files
-* add borland5 and codegear files
 * create tool to print locale info for testing
+
+20130330
+* code clean
+* fix for missing LOCALEDIR
 
 20130113
 * updated msvscpp files
