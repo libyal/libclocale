@@ -10,9 +10,14 @@ TODO
 * update include header
   - codepages
   - LCIDs
+* API
+  - add libclocale_initialize
 * add support for OEM codepages
 * update man pages
 * create tool to print locale info for testing
+
+20130404
+* updated dependencies
 
 20130403
 * updated dependencies
