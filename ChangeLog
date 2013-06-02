@@ -16,6 +16,9 @@ TODO
 * update man pages
 * create tool to print locale info for testing
 
+20130602
+* fixes for stand-alone usage
+
 20130509
 * small changes
 
