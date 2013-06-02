@@ -42,6 +42,15 @@ LIBCLOCALE_EXTERN \
 const char *libclocale_get_version(
              void );
 
+/* TODO: WARNING this function is likely to change */
+/* Initializes the locale values
+ * Returns 1 if successful or -1 on error
+ */
+LIBCLOCALE_EXTERN \
+int libclocale_initialize(
+     const char *domain_name,
+     libclocale_error_t **error );
+
 /* -------------------------------------------------------------------------
  * Codepage functions
  * ------------------------------------------------------------------------- */
@@ -49,16 +58,27 @@ const char *libclocale_get_version(
 LIBCLOCALE_EXTERN \
 int libclocale_codepage;
 
+/* Retrieves the narrow system string codepage
+ * A value of 0 represents no codepage, UTF-8 encoding is used instead
+ * Returns 1 if successful or -1 on error
+ */
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_get(
      int *codepage,
      libclocale_error_t **error );
 
+/* Sets the narrow system string codepage
+ * A value of 0 represents no codepage, UTF-8 encoding is used instead
+ * Returns 1 if successful or -1 on error
+ */
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_set(
      int codepage,
      libclocale_error_t **error );
 
+/* Copies the codepage from a string
+ * Returns 1 if successful, 0 if unsupported value or -1 on error
+ */
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_copy_from_string(
      int *codepage,
@@ -69,6 +89,9 @@ int libclocale_codepage_copy_from_string(
 
 #if defined( LIBCLOCALE_HAVE_WIDE_CHARACTER_TYPE )
 
+/* Copies the codepage from a string
+ * Returns 1 if successful, 0 if unsupported value or -1 on error
+ */
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_copy_from_string_wide(
      int *codepage,
@@ -83,11 +106,19 @@ int libclocale_codepage_copy_from_string_wide(
  * Locale functions
  * ------------------------------------------------------------------------- */
 
+/* Retrieves the codepage for the locale character set
+ * The codepage is set to 0 if the character set is UTF-8
+ * and will default to LIBCLOCALE_CODEPAGE_ASCII the codepage cannot be determined
+ * Returns 1 if success, 0 if no codepage could be found or -1 on error
+ */
 LIBCLOCALE_EXTERN \
 int libclocale_locale_get_codepage(
      int *codepage,
      libclocale_error_t **error );
 
+/* Retrieves the decimal point
+ * Returns 1 if successful or -1 on error
+ */
 LIBCLOCALE_EXTERN \
 int libclocale_locale_get_decimal_point(
      int *decimal_point,

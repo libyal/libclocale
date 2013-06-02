@@ -90,7 +90,7 @@ int libclocale_GetLocaleInfoA(
 
 /* Retrieves the codepage for the locale character set
  * The codepage is set to 0 if the character set is UTF-8
- * and wlll default to LIBCLOCALE_CODEPAGE_ASCII the codepage cannot be determined
+ * and will default to LIBCLOCALE_CODEPAGE_ASCII the codepage cannot be determined
  * Returns 1 if success, 0 if no codepage could be found or -1 on error
  */
 int libclocale_locale_get_codepage(
