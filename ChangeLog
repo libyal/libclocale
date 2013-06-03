@@ -16,6 +16,9 @@ TODO
 * update man pages
 * create tool to print locale info for testing
 
+20130603
+* fixes for stand-alone usage on netbsd
+
 20130602
 * fixes for stand-alone usage
 

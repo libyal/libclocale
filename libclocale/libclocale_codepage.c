@@ -25,6 +25,7 @@
 #include "libclocale_codepage.h"
 #include "libclocale_definitions.h"
 #include "libclocale_libcerror.h"
+#include "libclocale_libcstring.h"
 
 /* If the codepage is not set strings are formatted using UTF-8
  */
