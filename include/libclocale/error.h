@@ -1,7 +1,7 @@
 /*
  * The error code definitions for libclocale
  *
- * Copyright (c) 2010-2013, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (c) 2010-2014, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *

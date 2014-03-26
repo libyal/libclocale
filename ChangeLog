@@ -16,6 +16,10 @@ TODO
 * update man pages
 * create tool to print locale info for testing
 
+20140105
+* updated dependencies
+* 2014 update
+
 20130609
 * fix in .pc.in file
 

@@ -1,6 +1,6 @@
 # Files to ignore by git
 #
-# Version: 20130831
+# Version: 20130922
 
 # Generic auto-generated build files
 *~
@@ -101,6 +101,7 @@ stamp-h1
 /include/libclocale/types.h
 /libclocale/libclocale.rc
 /libclocale/libclocale_definitions.h
+/tests/tmp
 
 # Local library dependencies specific files
 /libcerror
