@@ -10,8 +10,16 @@ Package: libclocale
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: libclocale-dbg
 Description: Library to support cross-platform C locale functions
  libclocale is a library to support cross-platform C locale functions.
+
+Package: libclocale-dbg
+Architecture: any
+Section: debug
+Depends: libclocale (= ${Source-Version}), ${misc:Depends}
+Description: Debugging symbols for libclocale
+ Debugging symbols for libclocale.
 
 Package: libclocale-dev
 Section: libdevel
