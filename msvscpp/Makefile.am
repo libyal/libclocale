@@ -1,6 +1,6 @@
 MSVSCPP_FILES = \
 	libcerror/libcerror.vcproj \
-	libclocale_dll/libclocale_dll.vcproj \
+	libclocale/libclocale.vcproj \
 	libcstring/libcstring.vcproj \
 	libclocale.sln
 
