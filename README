@@ -1,4 +1,6 @@
-See:
-* http://code.google.com/p/libclocale/wiki/Building
-* README.macosx
+libclocale is a library for cross-platform C locale functions.
+
+For more information see:
+* Project documentation: https://github.com/libyal/libclocale/wiki/Home
+* How to build from source: https://github.com/libyal/libclocale/wiki/Building
 

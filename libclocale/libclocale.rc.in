@@ -28,7 +28,7 @@ BEGIN
       VALUE "OriginalFilename",		"libclocale.dll\0"
       VALUE "ProductName",		"libclocale\0"
       VALUE "ProductVersion",		"@VERSION@" "\0"
-      VALUE "Comments",			"For more information visit http://code.google.com/p/libclocale/\0"
+      VALUE "Comments",			"For more information visit https://github.com/libyal/libclocale/\0"
     END
   END
   BLOCK "VarFileInfo"
