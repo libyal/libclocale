@@ -1,5 +1,9 @@
 libclocale is a library for cross-platform C locale functions.
 
+Project information:
+* Status: alpha
+* Licence: LGPLv3+
+
 For more information see:
 * Project documentation: https://github.com/libyal/libclocale/wiki/Home
 * How to build from source: https://github.com/libyal/libclocale/wiki/Building
