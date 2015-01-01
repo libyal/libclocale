@@ -1,4 +1,4 @@
-.Dd January 5, 2014
+.Dd January  1, 2015
 .Dt libclocale 3
 .Os libclocale
 .Sh NAME
@@ -12,43 +12,43 @@
 Support functions
 .Ft const char *
 .Fn libclocale_get_version "void"
+.Ft int
+.Fn libclocale_initialize "const char *domain_name, libclocale_error_t **error"
 .Pp
-Error functions
-.Ft void
-.Fn libclocale_error_free "libclocale_error_t **error"
-.Ft void
-.Fn libclocale_error_set "libclocale_error_t **error, int error_domain, int error_code, const char *format_string, ..."
+Codepage functions
 .Ft int
-.Fn libclocale_error_matches "libclocale_error_t *error, int error_domain, int error_code"
+.Fn libclocale_codepage_get "int *codepage, libclocale_error_t **error"
 .Ft int
-.Fn libclocale_error_fprint "libclocale_error_t *error, FILE *stream"
+.Fn libclocale_codepage_set "int codepage, libclocale_error_t **error"
 .Ft int
-.Fn libclocale_error_sprint "libclocale_error_t *error, char *string, size_t size"
+.Fn libclocale_codepage_copy_from_string "int *codepage, const char *string, size_t string_length, uint32_t feature_flags, libclocale_error_t **error"
 .Ft int
-.Fn libclocale_error_backtrace_fprint "libclocale_error_t *error, FILE *stream"
-.Ft int
-.Fn libclocale_error_backtrace_sprint "libclocale_error_t *error, char *string, size_t size"
+.Fn libclocale_codepage_copy_from_string_wide "int *codepage, const wchar_t *string, size_t string_length, uint32_t feature_flags, libclocale_error_t **error"
 .Pp
-System error functions
-.Ft void
-.Fn libclocale_system_set_error "libclocale_error_t **error, int error_domain, int error_code, uint32_t system_error_code, const char *format_string, ..."
+Locale functions
+.Ft int
+.Fn libclocale_locale_get_codepage "int *codepage, libclocale_error_t **error"
+.Ft int
+.Fn libclocale_locale_get_decimal_point "int *decimal_point, libclocale_error_t **error"
 .Sh DESCRIPTION
 The
 .Fn libclocale_get_version
 function is used to retrieve the library version.
 .Sh RETURN VALUES
-Most of the functions return NULL or -1 on error, dependent on the return type. For the actual return values refer to libclocale.h
+Most of the functions return NULL or -1 on error, dependent on the return type.
+For the actual return values see "libclocale.h".
 .Sh ENVIRONMENT
 None
 .Sh FILES
 None
 .Sh BUGS
-Please report bugs of any kind to <joachim.metz@gmail.com> or on the project website:
-https://github.com/libyal/libclocale/
+Please report bugs of any kind on the project issue tracker: https://github.com/libyal/libclocale/issues
 .Sh AUTHOR
-These man pages were written by Joachim Metz.
+These man pages are generated from "libclocale.h".
 .Sh COPYRIGHT
-Copyright 2010-2014, Joachim Metz <joachim.metz@gmail.com>.
-This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Copyright (C) 2010-2015, Joachim Metz <joachim.metz@gmail.com>.
+
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 .Sh SEE ALSO
 the libclocale.h include file
