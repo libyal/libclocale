@@ -18,7 +18,7 @@ libclocale_la_SOURCES = \
 	libclocale_support.c libclocale_support.h \
 	libclocale_unused.h
 
-libclocale_la_LIBADD  = \
+libclocale_la_LIBADD = \
 	@LIBCSTRING_LIBADD@ \
 	@LIBCERROR_LIBADD@
 
