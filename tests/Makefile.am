@@ -6,17 +6,20 @@ AM_CPPFLAGS = \
 	@LIBCLOCALE_DLL_IMPORT@
 
 TESTS = \
-	test_get_codepage.sh
+	test_get_codepage.sh \
+	test_get_decimal_point.sh
 
 check_SCRIPTS = \
 	test_get_codepage.sh \
+	test_get_decimal_point.sh \
 	test_runner.sh
 
 EXTRA_DIST = \
 	$(check_SCRIPTS)
 
 check_PROGRAMS = \
-	clocale_test_get_codepage
+	clocale_test_get_codepage \
+	clocale_test_get_decimal_point
 
 clocale_test_get_codepage_SOURCES = \
 	clocale_test_libcerror.h \
@@ -25,6 +28,17 @@ clocale_test_get_codepage_SOURCES = \
 	clocale_test_get_codepage.c
 
 clocale_test_get_codepage_LDADD = \
+	../libclocale/libclocale.la \
+	@LIBCERROR_LIBADD@ \
+	@LIBCSTRING_LIBADD@
+
+clocale_test_get_decimal_point_SOURCES = \
+	clocale_test_libcerror.h \
+	clocale_test_libclocale.h \
+	clocale_test_libcstring.h \
+	clocale_test_get_decimal_point.c
+
+clocale_test_get_decimal_point_LDADD = \
 	../libclocale/libclocale.la \
 	@LIBCERROR_LIBADD@ \
 	@LIBCSTRING_LIBADD@

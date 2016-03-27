@@ -9,7 +9,7 @@ EXIT_IGNORE=77;
 
 TEST_PREFIX=`dirname ${PWD}`;
 TEST_PREFIX=`basename ${TEST_PREFIX} | sed 's/^lib\([^-]*\)/\1/'`;
-TEST_FUNCTION="get_codepage";
+TEST_FUNCTION="get_decimal_point";
 
 TEST_PROFILE="lib${TEST_PREFIX}";
 OPTION_SETS="";
