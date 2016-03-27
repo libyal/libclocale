@@ -33,12 +33,14 @@ extern "C" {
 #endif
 
 #if defined( WINAPI ) && ( WINVER < 0x0500 )
+
 int libclocale_GetLocaleInfo(
      LCID locale_identifier,
      LCTYPE locale_type,
      LPSTR buffer,
      int size );
-#endif
+
+#endif /* defined( WINAPI ) && ( WINVER < 0x0500 ) */
 
 LIBCLOCALE_EXTERN \
 int libclocale_locale_get_codepage(
@@ -54,5 +56,5 @@ int libclocale_locale_get_decimal_point(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCLOCALE_LOCALE_H ) */
 

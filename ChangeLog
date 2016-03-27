@@ -3,6 +3,7 @@ TODO
   - complete language support
   - move language support into library
 * tests
+  - initialize
   - codepage from string
   - language from string
 * Missing caseless wide string compare in Cygwin

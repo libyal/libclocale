@@ -51,5 +51,5 @@ int libclocale_initialize(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCLOCALE_SUPPORT_H ) */
 

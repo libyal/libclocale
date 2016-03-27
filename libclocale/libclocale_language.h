@@ -466,6 +466,7 @@ int libclocale_language_identifier_copy_from_string(
      libcerror_error_t **error );
 
 #if defined( HAVE_WIDE_CHARACTER_TYPE )
+
 LIBCLOCALE_EXTERN \
 int libclocale_language_identifier_copy_from_string_wide(
      int *language_identifier,
@@ -473,11 +474,12 @@ int libclocale_language_identifier_copy_from_string_wide(
      size_t string_length,
      uint32_t feature_flags,
      libcerror_error_t **error );
+
 #endif /* defined( HAVE_WIDE_CHARACTER_TYPE ) */
 
 #if defined( __cplusplus )
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCLOCALE_LANGUAGE_H ) */
 
