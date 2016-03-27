@@ -19,8 +19,8 @@
  * along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#if !defined( _LNK_TEST_LIBCSTRING_H )
-#define _LNK_TEST_LIBCSTRING_H
+#if !defined( _CLOCALE_TEST_LIBCSTRING_H )
+#define _CLOCALE_TEST_LIBCSTRING_H
 
 #include <common.h>
 
