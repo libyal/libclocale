@@ -1,5 +1,5 @@
 #!/bin/bash
-# Library API function testing script
+# Library API functions testing script
 #
 # Version: 20160327
 
@@ -9,19 +9,31 @@ EXIT_IGNORE=77;
 
 TEST_PREFIX=`dirname ${PWD}`;
 TEST_PREFIX=`basename ${TEST_PREFIX} | sed 's/^lib\([^-]*\)/\1/'`;
-TEST_FUNCTION="get_decimal_point";
 
 TEST_PROFILE="lib${TEST_PREFIX}";
-OPTION_SETS="";
+TEST_FUNCTIONS="get_codepage get_decimal_point get_version";
 
 TEST_TOOL_DIRECTORY=".";
-TEST_TOOL="${TEST_PREFIX}_test_${TEST_FUNCTION}";
 
 test_api_function()
 {
-	local TEST_EXECUTABLE=$1;
+	local TEST_FUNCTION=$1;
+	local TEST_TOOL="${TEST_PREFIX}_test_${TEST_FUNCTION}";
 
-	echo -n -e "Testing API function: ${TEST_FUNCTION}\t"
+	local TEST_EXECUTABLE="${TEST_TOOL_DIRECTORY}/${TEST_TOOL}";
+
+	if ! test -x "${TEST_EXECUTABLE}";
+	then
+		TEST_EXECUTABLE="${TEST_TOOL_DIRECTORY}/${TEST_TOOL}.exe";
+	fi
+
+	if ! test -x "${TEST_EXECUTABLE}";
+	then
+		echo "Missing test executable: ${TEST_EXECUTABLE}";
+
+		return ${EXIT_FAILURE};
+	fi
+	echo -n -e "Testing API function: lib${TEST_PREFIX}_${TEST_FUNCTION}\t"
 
 	run_test_with_arguments ${TEST_EXECUTABLE};
 	local RESULT=$?;
@@ -40,20 +52,6 @@ then
 	exit ${EXIT_IGNORE};
 fi
 
-TEST_EXECUTABLE="${TEST_TOOL_DIRECTORY}/${TEST_TOOL}";
-
-if ! test -x "${TEST_EXECUTABLE}";
-then
-	TEST_EXECUTABLE="${TEST_TOOL_DIRECTORY}/${TEST_TOOL}.exe";
-fi
-
-if ! test -x "${TEST_EXECUTABLE}";
-then
-	echo "Missing test executable: ${TEST_EXECUTABLE}";
-
-	exit ${EXIT_FAILURE};
-fi
-
 TEST_RUNNER="tests/test_runner.sh";
 
 if ! test -f "${TEST_RUNNER}";
@@ -70,8 +68,16 @@ fi
 
 source ${TEST_RUNNER};
 
-test_api_function "${TEST_EXECUTABLE}";
-RESULT=$?;
+for TEST_FUNCTION in ${TEST_FUNCTIONS};
+do
+	test_api_function "${TEST_FUNCTION}";
+	RESULT=$?;
+
+	if test ${RESULT} -ne ${EXIT_SUCCESS};
+	then
+		break;
+	fi
+done
 
 exit ${RESULT};
 
