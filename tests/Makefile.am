@@ -45,7 +45,8 @@ clocale_test_get_decimal_point_LDADD = \
 clocale_test_get_version_SOURCES = \
 	clocale_test_libclocale.h \
 	clocale_test_libcstring.h \
-	clocale_test_get_version.c
+	clocale_test_get_version.c \
+	clocale_test_unused.h
 
 clocale_test_get_version_LDADD = \
 	../libclocale/libclocale.la \

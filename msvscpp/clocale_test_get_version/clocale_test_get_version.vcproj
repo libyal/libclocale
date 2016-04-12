@@ -193,6 +193,10 @@
 				RelativePath="..\..\tests\clocale_test_libcstring.h"
 				>
 			</File>
+			<File
+				RelativePath="..\..\tests\clocale_test_unused.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
