@@ -21,10 +21,10 @@ check_PROGRAMS = \
 	clocale_test_get_version
 
 clocale_test_get_codepage_SOURCES = \
+	clocale_test_get_codepage.c \
 	clocale_test_libcerror.h \
 	clocale_test_libclocale.h \
-	clocale_test_libcstring.h \
-	clocale_test_get_codepage.c
+	clocale_test_libcstring.h
 
 clocale_test_get_codepage_LDADD = \
 	../libclocale/libclocale.la \
@@ -32,10 +32,10 @@ clocale_test_get_codepage_LDADD = \
 	@LIBCSTRING_LIBADD@
 
 clocale_test_get_decimal_point_SOURCES = \
+	clocale_test_get_decimal_point.c \
 	clocale_test_libcerror.h \
 	clocale_test_libclocale.h \
-	clocale_test_libcstring.h \
-	clocale_test_get_decimal_point.c
+	clocale_test_libcstring.h
 
 clocale_test_get_decimal_point_LDADD = \
 	../libclocale/libclocale.la \
@@ -43,9 +43,10 @@ clocale_test_get_decimal_point_LDADD = \
 	@LIBCSTRING_LIBADD@
 
 clocale_test_get_version_SOURCES = \
+	clocale_test_get_version.c \
 	clocale_test_libclocale.h \
 	clocale_test_libcstring.h \
-	clocale_test_get_version.c \
+	clocale_test_macros.h \
 	clocale_test_unused.h
 
 clocale_test_get_version_LDADD = \

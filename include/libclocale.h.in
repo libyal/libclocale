@@ -128,5 +128,5 @@ int libclocale_locale_get_decimal_point(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCLOCALE_H ) */
 
