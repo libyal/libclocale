@@ -46,7 +46,7 @@ int clocale_test_get_version(
 	          LIBCLOCALE_VERSION_STRING,
 	          9 );
 
-	CLOCALE_TEST_ASSERT_EQUAL(
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
 	 "result",
 	 result,
 	 0 );

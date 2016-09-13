@@ -3,7 +3,7 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: libuna
+Name: libclocale
 Description: Library to support cross-platform C locale functions
 Version: @VERSION@
 Libs: -L${libdir} -lclocale
