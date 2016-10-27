@@ -121,7 +121,7 @@ stamp-h[1-9]
 /libclocale/libclocale_definitions.h
 /tests/clocale_test_get_codepage
 /tests/clocale_test_get_decimal_point
-/tests/clocale_test_get_version
+/tests/clocale_test_support
 /tests/tmp*
 
 # Local library dependencies specific files

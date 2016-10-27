@@ -10,7 +10,7 @@ $TestPrefix = Split-Path -path ${Pwd}.Path -parent
 $TestPrefix = Split-Path -path ${TestPrefix} -leaf
 $TestPrefix = ${TestPrefix}.Substring(3)
 
-$TestFunctions = "get_version get_codepage get_decimal_point" -split " "
+$TestFunctions = "get_codepage get_decimal_point support" -split " "
 
 $TestToolDirectory = "..\vs2010\Release"
 

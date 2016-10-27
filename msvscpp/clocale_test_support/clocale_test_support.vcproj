@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="clocale_test_get_version"
-	ProjectGUID="{F5CCF6B2-DD89-4D87-87AB-E51A71745AD8}"
-	RootNamespace="clocale_test_get_version"
+	Name="clocale_test_support"
+	ProjectGUID="{ACCAE23C-D31F-4EC5-B961-F40B86BFC4A0}"
+	RootNamespace="clocale_test_support"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="131072"
 	>
@@ -176,7 +176,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\tests\clocale_test_get_version.c"
+				RelativePath="..\..\tests\clocale_test_support.c"
 				>
 			</File>
 		</Filter>

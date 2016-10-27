@@ -18,7 +18,7 @@ EXTRA_DIST = \
 check_PROGRAMS = \
 	clocale_test_get_codepage \
 	clocale_test_get_decimal_point \
-	clocale_test_get_version
+	clocale_test_support
 
 clocale_test_get_codepage_SOURCES = \
 	clocale_test_get_codepage.c \
@@ -42,14 +42,14 @@ clocale_test_get_decimal_point_LDADD = \
 	@LIBCERROR_LIBADD@ \
 	@LIBCSTRING_LIBADD@
 
-clocale_test_get_version_SOURCES = \
-	clocale_test_get_version.c \
+clocale_test_support_SOURCES = \
 	clocale_test_libclocale.h \
 	clocale_test_libcstring.h \
 	clocale_test_macros.h \
+	clocale_test_support.c \
 	clocale_test_unused.h
 
-clocale_test_get_version_LDADD = \
+clocale_test_support_LDADD = \
 	../libclocale/libclocale.la \
 	@LIBCSTRING_LIBADD@
 

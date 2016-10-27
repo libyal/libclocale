@@ -1,7 +1,7 @@
 MSVSCPP_FILES = \
 	clocale_test_get_codepage/clocale_test_get_codepage.vcproj \
 	clocale_test_get_decimal_point/clocale_test_get_decimal_point.vcproj \
-	clocale_test_get_version/clocale_test_get_version.vcproj \
+	clocale_test_support/clocale_test_support.vcproj \
 	libcerror/libcerror.vcproj \
 	libclocale/libclocale.vcproj \
 	libcstring/libcstring.vcproj \
