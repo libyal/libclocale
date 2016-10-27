@@ -130,7 +130,7 @@ on_error:
 /* Tests the libclocale_codepage_copy_from_string_wide function
  * Returns 1 if successful or 0 if not
  */
-int clocale_test_codepage_copy_from_string(
+int clocale_test_codepage_copy_from_string_wide(
      void )
 {
 	libcerror_error_t *error = NULL;
