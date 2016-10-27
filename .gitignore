@@ -119,8 +119,8 @@ stamp-h[1-9]
 /include/libclocale/types.h
 /libclocale/libclocale.rc
 /libclocale/libclocale_definitions.h
-/tests/clocale_test_get_codepage
-/tests/clocale_test_get_decimal_point
+/tests/clocale_test_codepage
+/tests/clocale_test_locale
 /tests/clocale_test_support
 /tests/tmp*
 

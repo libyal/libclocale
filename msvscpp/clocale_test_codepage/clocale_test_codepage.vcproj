@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="clocale_test_get_decimal_point"
-	ProjectGUID="{12D99719-1737-40AB-9ABC-C8982A46E3C8}"
-	RootNamespace="clocale_test_get_decimal_point"
+	Name="clocale_test_codepage"
+	ProjectGUID="{D1FCF52B-1ADE-459E-B77B-26F17252AB13}"
+	RootNamespace="clocale_test_codepage"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="131072"
 	>
@@ -176,7 +176,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\tests\clocale_test_get_decimal_point.c"
+				RelativePath="..\..\tests\clocale_test_codepage.c"
 				>
 			</File>
 		</Filter>
@@ -195,6 +195,14 @@
 			</File>
 			<File
 				RelativePath="..\..\tests\clocale_test_libcstring.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tests\clocale_test_macros.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tests\clocale_test_unused.h"
 				>
 			</File>
 		</Filter>

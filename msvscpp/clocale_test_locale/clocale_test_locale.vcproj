@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="clocale_test_get_codepage"
-	ProjectGUID="{FE1A40F3-722F-45A7-9D65-57472DB86D3F}"
-	RootNamespace="clocale_test_get_codepage"
+	Name="clocale_test_locale"
+	ProjectGUID="{32092A02-8028-4206-90F2-B638FA84165E}"
+	RootNamespace="clocale_test_locale"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="131072"
 	>
@@ -176,7 +176,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\tests\clocale_test_get_codepage.c"
+				RelativePath="..\..\tests\clocale_test_locale.c"
 				>
 			</File>
 		</Filter>
@@ -195,6 +195,14 @@
 			</File>
 			<File
 				RelativePath="..\..\tests\clocale_test_libcstring.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tests\clocale_test_macros.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tests\clocale_test_unused.h"
 				>
 			</File>
 		</Filter>

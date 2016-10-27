@@ -16,28 +16,32 @@ EXTRA_DIST = \
 	$(check_SCRIPTS)
 
 check_PROGRAMS = \
-	clocale_test_get_codepage \
-	clocale_test_get_decimal_point \
+	clocale_test_codepage \
+	clocale_test_locale \
 	clocale_test_support
 
-clocale_test_get_codepage_SOURCES = \
-	clocale_test_get_codepage.c \
+clocale_test_codepage_SOURCES = \
+	clocale_test_codepage.c \
 	clocale_test_libcerror.h \
 	clocale_test_libclocale.h \
-	clocale_test_libcstring.h
+	clocale_test_libcstring.h \
+	clocale_test_macros.h \
+	clocale_test_unused.h
 
-clocale_test_get_codepage_LDADD = \
+clocale_test_codepage_LDADD = \
 	../libclocale/libclocale.la \
 	@LIBCERROR_LIBADD@ \
 	@LIBCSTRING_LIBADD@
 
-clocale_test_get_decimal_point_SOURCES = \
-	clocale_test_get_decimal_point.c \
+clocale_test_locale_SOURCES = \
 	clocale_test_libcerror.h \
 	clocale_test_libclocale.h \
-	clocale_test_libcstring.h
+	clocale_test_libcstring.h \
+	clocale_test_locale.c \
+	clocale_test_macros.h \
+	clocale_test_unused.h
 
-clocale_test_get_decimal_point_LDADD = \
+clocale_test_locale_LDADD = \
 	../libclocale/libclocale.la \
 	@LIBCERROR_LIBADD@ \
 	@LIBCSTRING_LIBADD@
