@@ -46,10 +46,10 @@ int clocale_test_locale_get_codepage(
 	          &codepage,
 	          &error );
 
-	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	CLOCALE_TEST_ASSERT_NOT_EQUAL_INT(
 	 "result",
 	 result,
-	 1 );
+	 -1 );
 
         CLOCALE_TEST_ASSERT_IS_NULL(
          "error",
