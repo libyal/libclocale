@@ -47,6 +47,7 @@ clocale_test_locale_LDADD = \
 	@LIBCSTRING_LIBADD@
 
 clocale_test_support_SOURCES = \
+	clocale_test_libcerror.h \
 	clocale_test_libclocale.h \
 	clocale_test_libcstring.h \
 	clocale_test_macros.h \
@@ -55,6 +56,7 @@ clocale_test_support_SOURCES = \
 
 clocale_test_support_LDADD = \
 	../libclocale/libclocale.la \
+	@LIBCERROR_LIBADD@ \
 	@LIBCSTRING_LIBADD@
 
 MAINTAINERCLEANFILES = \

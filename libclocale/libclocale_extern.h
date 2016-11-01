@@ -42,5 +42,5 @@
 
 #endif
 
-#endif
+#endif /* !defined( _LIBCLOCALE_INTERNAL_EXTERN_H ) */
 

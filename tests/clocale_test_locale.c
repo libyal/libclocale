@@ -1,5 +1,5 @@
 /*
- * Library get decimal point testing program
+ * Library locale functions test program
  *
  * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
  *

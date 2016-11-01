@@ -202,9 +202,10 @@ typedef int64_t off64_t;
 /* The following type definitions hide internal data structures
  */
 
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCLOCALE_TYPES_H ) */
 

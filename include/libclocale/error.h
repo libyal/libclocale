@@ -39,7 +39,7 @@ enum LIBCLOCALE_ERROR_DOMAINS
 	LIBCLOCALE_ERROR_DOMAIN_INPUT			= (int) 'i',
 	LIBCLOCALE_ERROR_DOMAIN_MEMORY			= (int) 'm',
 	LIBCLOCALE_ERROR_DOMAIN_OUTPUT			= (int) 'o',
-	LIBCLOCALE_ERROR_DOMAIN_RUNTIME			= (int) 'r',
+	LIBCLOCALE_ERROR_DOMAIN_RUNTIME			= (int) 'r'
 };
 
 /* The argument error codes
@@ -208,6 +208,17 @@ enum LIBCLOCALE_MEMORY_ERROR
 	LIBCLOCALE_MEMORY_ERROR_SET_FAILED		= 3
 };
 
+/* The output error codes
+ */
+enum LIBCLOCALE_OUTPUT_ERROR
+{
+	LIBCLOCALE_OUTPUT_ERROR_GENERIC			= 0,
+
+	/* There is insuficient space to write the output
+	 */
+	LIBCLOCALE_OUTPUT_ERROR_INSUFFICIENT_SPACE	= 1
+};
+
 /* The runtime error codes
  * to signify errors regarding runtime processing
  */
@@ -276,16 +287,5 @@ enum LIBCLOCALE_RUNTIME_ERROR
 	LIBCLOCALE_RUNTIME_ERROR_ABORT_REQUESTED	= 15
 };
 
-/* The output error codes
- */
-enum LIBCLOCALE_OUTPUT_ERROR
-{
-	LIBCLOCALE_OUTPUT_ERROR_GENERIC			= 0,
-
-	/* There is insuficient space to write the output
-	 */
-	LIBCLOCALE_OUTPUT_ERROR_INSUFFICIENT_SPACE	= 1
-};
-
-#endif
+#endif /* !defined( _LIBCLOCALE_ERROR_H ) */
 

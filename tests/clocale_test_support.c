@@ -25,6 +25,7 @@
 #include <stdlib.h>
 #endif
 
+#include "clocale_test_libcerror.h"
 #include "clocale_test_libclocale.h"
 #include "clocale_test_libcstring.h"
 #include "clocale_test_macros.h"
@@ -57,6 +58,34 @@ on_error:
 	return( 0 );
 }
 
+/* Tests the libclocale_initialize function
+ * Returns 1 if successful or 0 if not
+ */
+int clocale_test_initialize(
+     void )
+{
+	libcerror_error_t *error = NULL;
+	int result               = 0;
+
+	result = libclocale_initialize(
+	          "test",
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	return( 1 );
+
+on_error:
+	return( 0 );
+}
+
 /* The main program
  */
 #if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
@@ -76,7 +105,9 @@ int main(
 	 "libclocale_get_version",
 	 clocale_test_get_version );
 
-	/* TODO: add tests for libclocale_initialize */
+	CLOCALE_TEST_RUN(
+	 "libclocale_initialize",
+	 clocale_test_initialize );
 
 	return( EXIT_SUCCESS );
 

@@ -2,10 +2,6 @@ TODO
 * language
   - complete language support
   - move language support into library
-* tests
-  - initialize
-  - codepage from string
-  - language from string
 * Missing caseless wide string compare in Cygwin
   when WINAPI is enabled
 * update include header
@@ -16,6 +12,9 @@ TODO
 * add support for OEM codepages
 * update man pages
 * create tool to print locale info for testing
+
+20161101
+* worked on tests
 
 20160827
 * worked on tests

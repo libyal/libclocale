@@ -84,6 +84,57 @@ on_error:
 	return( 0 );
 }
 
+/* Tests the libclocale_codepage_set function
+ * Returns 1 if successful or 0 if not
+ */
+int clocale_test_codepage_set(
+     void )
+{
+	libcerror_error_t *error = NULL;
+	int result               = 0;
+
+	result = libclocale_codepage_set(
+	          LIBCLOCALE_CODEPAGE_ASCII,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	/* Test error cases
+	 */
+	result = libclocale_codepage_set(
+	          -1,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	return( 1 );
+
+on_error:
+	if( error != NULL )
+	{
+		libcerror_error_free(
+		 &error );
+	}
+	return( 0 );
+}
+
 /* Tests the libclocale_codepage_copy_from_string function
  * Returns 1 if successful or 0 if not
  */
@@ -91,15 +142,118 @@ int clocale_test_codepage_copy_from_string(
      void )
 {
 	libcerror_error_t *error = NULL;
+	int codepage             = 0;
 	int result               = 0;
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "ascii",
+	          5,
+	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-1",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "koi8-r",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_KOI8,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1252",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
 
 	/* Test error cases
 	 */
 	result = libclocale_codepage_copy_from_string(
 	          NULL,
+	          "ascii",
+	          5,
+	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
 	          NULL,
+	          5,
 	          0,
-	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "ascii",
+	          5,
+	          0xffffffffUL,
 	          &error );
 
 	CLOCALE_TEST_ASSERT_EQUAL_INT(
@@ -134,15 +288,118 @@ int clocale_test_codepage_copy_from_string_wide(
      void )
 {
 	libcerror_error_t *error = NULL;
+	int codepage             = 0;
 	int result               = 0;
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"ascii",
+	          5,
+	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-1",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"koi8-r",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_KOI8,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1252",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CLOCALE_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
 
 	/* Test error cases
 	 */
 	result = libclocale_codepage_copy_from_string_wide(
 	          NULL,
+	          L"ascii",
+	          5,
+	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
 	          NULL,
+	          5,
 	          0,
-	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"ascii",
+	          5,
+	          0xffffffffUL,
 	          &error );
 
 	CLOCALE_TEST_ASSERT_EQUAL_INT(
@@ -189,7 +446,9 @@ int main(
 	 "libclocale_codepage_get",
 	 clocale_test_codepage_get );
 
-	/* TODO: add tests for libclocale_codepage_set */
+	CLOCALE_TEST_RUN(
+	 "libclocale_codepage_set",
+	 clocale_test_codepage_set );
 
 	CLOCALE_TEST_RUN(
 	 "libclocale_codepage_copy_from_string",
