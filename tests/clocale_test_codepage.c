@@ -21,6 +21,7 @@
 
 #include <common.h>
 #include <file_stream.h>
+#include <types.h>
 
 #if defined( HAVE_STDLIB_H ) || defined( WINAPI )
 #include <stdlib.h>
@@ -28,7 +29,6 @@
 
 #include "clocale_test_libcerror.h"
 #include "clocale_test_libclocale.h"
-#include "clocale_test_libcstring.h"
 #include "clocale_test_macros.h"
 #include "clocale_test_unused.h"
 
@@ -429,7 +429,7 @@ on_error:
 
 /* The main program
  */
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 int wmain(
      int argc CLOCALE_TEST_ATTRIBUTE_UNUSED,
      wchar_t * const argv[] CLOCALE_TEST_ATTRIBUTE_UNUSED )

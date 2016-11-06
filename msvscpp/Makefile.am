@@ -4,7 +4,6 @@ MSVSCPP_FILES = \
 	clocale_test_support/clocale_test_support.vcproj \
 	libcerror/libcerror.vcproj \
 	libclocale/libclocale.vcproj \
-	libcstring/libcstring.vcproj \
 	libclocale.sln
 
 EXTRA_DIST = \

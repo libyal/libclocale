@@ -53,7 +53,7 @@ int libclocale_initialize(
 {
 	static char *function = "libclocale_initialize";
 
-#if !defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if !defined( HAVE_WIDE_SYSTEM_CHARACTER )
 	int codepage          = 0;
 #endif
 
@@ -94,8 +94,9 @@ int libclocale_initialize(
 
 		return( -1 );
 	}
-#endif
-#if !defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#endif /* defined( HAVE_BINDTEXTDOMAIN ) && defined( HAVE_TEXTDOMAIN ) */
+
+#if !defined( HAVE_WIDE_SYSTEM_CHARACTER )
 	if( libclocale_locale_get_codepage(
 	     &codepage,
 	     error ) != 1 )
@@ -122,7 +123,8 @@ int libclocale_initialize(
 
 		return( -1 );
 	}
-#endif
+#endif /* !defined( HAVE_WIDE_SYSTEM_CHARACTER ) */
+
 	return( 1 );
 }
 

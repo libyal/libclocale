@@ -20,6 +20,9 @@
  */
 
 #include <common.h>
+#include <file_stream.h>
+#include <narrow_string.h>
+#include <types.h>
 
 #if defined( HAVE_STDLIB_H ) || defined( WINAPI )
 #include <stdlib.h>
@@ -27,7 +30,6 @@
 
 #include "clocale_test_libcerror.h"
 #include "clocale_test_libclocale.h"
-#include "clocale_test_libcstring.h"
 #include "clocale_test_macros.h"
 #include "clocale_test_unused.h"
 
@@ -42,7 +44,7 @@ int clocale_test_get_version(
 
 	version_string = libclocale_get_version();
 
-	result = libcstring_narrow_string_compare(
+	result = narrow_string_compare(
 	          version_string,
 	          LIBCLOCALE_VERSION_STRING,
 	          9 );
@@ -88,7 +90,7 @@ on_error:
 
 /* The main program
  */
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 int wmain(
      int argc CLOCALE_TEST_ATTRIBUTE_UNUSED,
      wchar_t * const argv[] CLOCALE_TEST_ATTRIBUTE_UNUSED )
