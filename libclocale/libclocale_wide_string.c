@@ -26,6 +26,8 @@
 #include <wctype.h>
 #endif
 
+#include "libclocale_wide_string.h"
+
 #if defined( TOWLOWER ) && !defined( HAVE_WCSNCASECMP ) && !defined( HAVE_WCSCASECMP ) && !defined( WINAPI )
 
 /* Replacement for missing: wcsncasecmp
