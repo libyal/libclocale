@@ -38,9 +38,9 @@
 #include <libclocale/extern.h>
 
 #else
-#define LIBCLOCALE_EXTERN	extern
+#define LIBCLOCALE_EXTERN	/* extern */
 
-#endif
+#endif /* !defined( HAVE_LOCAL_LIBCLOCALE ) */
 
 #endif /* !defined( _LIBCLOCALE_INTERNAL_EXTERN_H ) */
 

@@ -32,8 +32,9 @@
 extern "C" {
 #endif
 
-LIBCLOCALE_EXTERN \
-int libclocale_codepage;
+/* Using extern here to make the value is exported when used as a local library
+ */
+extern int libclocale_codepage;
 
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_get(
