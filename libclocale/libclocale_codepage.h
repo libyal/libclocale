@@ -32,9 +32,11 @@
 extern "C" {
 #endif
 
-/* Using extern here to make the value is exported when used as a local library
- */
+#if !defined( __CYGWIN__ )
 extern int libclocale_codepage;
+#else
+int libclocale_codepage;
+#endif
 
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_get(
