@@ -16,10 +16,9 @@ DPKG_FILES = \
 	dpkg/compat \
 	dpkg/control \
 	dpkg/copyright \
-	dpkg/copyright.in \
 	dpkg/rules \
-	dpkg/libclocale-dev.docs \
-	dpkg/libclocale.docs \
+	dpkg/libclocale-dev.install \
+	dpkg/libclocale.install \
 	dpkg/source/format
 
 GETTEXT_FILES = \
