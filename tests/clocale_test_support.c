@@ -78,9 +78,9 @@ int clocale_test_initialize(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	return( 1 );
 

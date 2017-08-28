@@ -51,9 +51,9 @@ int clocale_test_codepage_get(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -66,9 +66,9 @@ int clocale_test_codepage_get(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -102,9 +102,9 @@ int clocale_test_codepage_set(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -117,9 +117,9 @@ int clocale_test_codepage_set(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -157,9 +157,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libclocale_codepage_copy_from_string(
 	          &codepage,
@@ -173,9 +173,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libclocale_codepage_copy_from_string(
 	          &codepage,
@@ -189,9 +189,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libclocale_codepage_copy_from_string(
 	          &codepage,
@@ -205,9 +205,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -223,9 +223,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -242,9 +242,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -261,9 +261,9 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -303,9 +303,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libclocale_codepage_copy_from_string_wide(
 	          &codepage,
@@ -319,9 +319,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libclocale_codepage_copy_from_string_wide(
 	          &codepage,
@@ -335,9 +335,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libclocale_codepage_copy_from_string_wide(
 	          &codepage,
@@ -351,9 +351,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -369,9 +369,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -388,9 +388,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -407,9 +407,9 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );

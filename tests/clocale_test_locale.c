@@ -51,9 +51,9 @@ int clocale_test_locale_get_codepage(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -66,9 +66,9 @@ int clocale_test_locale_get_codepage(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -103,9 +103,9 @@ int clocale_test_locale_get_decimal_point(
 	 result,
 	 1 );
 
-        CLOCALE_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -118,9 +118,9 @@ int clocale_test_locale_get_decimal_point(
 	 result,
 	 -1 );
 
-        CLOCALE_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
