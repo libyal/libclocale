@@ -2,7 +2,7 @@ AC_PREREQ( 2.59 )
 
 AC_INIT(
  [libclocale],
- [20170903],
+ [20170904],
  [joachim.metz@gmail.com])
 
 AC_CONFIG_SRCDIR(
@@ -37,7 +37,6 @@ AM_GNU_GETTEXT_VERSION([0.18.1])
 
 dnl Check for compiler language support
 AC_C_CONST
-AC_C_INLINE
 AC_C_VOLATILE
 
 dnl Check for large file support
@@ -52,16 +51,16 @@ AX_COMMON_CHECK_ENABLE_WIDE_CHARACTER_TYPE
 dnl Check for type definitions
 AX_TYPES_CHECK_LOCAL
 
-dnl Check if common headers and functions are available
+dnl Check if common required headers and functions are available
 AX_COMMON_CHECK_LOCAL
 
 dnl Check if libcerror or required headers and functions are available
 AX_LIBCERROR_CHECK_ENABLE
 
-dnl Check for library function support
+dnl Check if libclocale required headers and functions are available
 AX_LIBCLOCALE_CHECK_LOCAL
 
-dnl Check for test function support
+dnl Check if tests required headers and functions are available
 AX_TESTS_CHECK_LOCAL
 
 dnl Check if DLL support is needed
