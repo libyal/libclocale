@@ -65,16 +65,16 @@ build_script:
     msbuild vs2017\libclocale.sln /property:Platform=x64 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" )
 - cmd: if [%TARGET%]==[cygwin] (
     xcopy /i /q /s C:\projects\libclocale C:\cygwin\home\appveyor\libclocale &&
-    C:\cygwin\bin\bash -e -l -c "cd libclocale && ./synclibs.sh && ./autogen.sh" )
+    C:\cygwin\bin\bash -e -l -c "cd libclocale && ./synclibs.sh --use-head && ./autogen.sh" )
 - cmd: if [%TARGET%]==[cygwin64] (
     xcopy /i /q /s C:\projects\libclocale C:\cygwin64\home\appveyor\libclocale &&
-    C:\cygwin64\bin\bash -e -l -c "cd libclocale && ./synclibs.sh && ./autogen.sh" )
+    C:\cygwin64\bin\bash -e -l -c "cd libclocale && ./synclibs.sh --use-head && ./autogen.sh" )
 - cmd: if [%TARGET%]==[mingw] (
     xcopy /i /q /s C:\projects\libclocale C:\MinGW\msys\1.0\home\appveyor\libclocale &&
-    C:\MinGW\msys\1.0\bin\bash -e -l -c "cd libclocale && sed 's/@VERSION@/0.29/g' m4/pkg.m4.in > m4/pkg.m4 && ./synclibs.sh && ./autogen.sh" )
+    C:\MinGW\msys\1.0\bin\bash -e -l -c "cd libclocale && sed 's/@VERSION@/0.29/g' m4/pkg.m4.in > m4/pkg.m4 && ./synclibs.sh --use-head && ./autogen.sh" )
 - cmd: if [%TARGET%]==[mingw-w64] (
     xcopy /i /q /s C:\projects\libclocale C:\msys64\home\appveyor\libclocale &&
-    C:\msys64\usr\bin\bash -e -l -c "cd libclocale && ./synclibs.sh && ./autogen.sh" )
+    C:\msys64\usr\bin\bash -e -l -c "cd libclocale && ./synclibs.sh --use-head && ./autogen.sh" )
 
 test_script:
 - cmd: rem Run tests
