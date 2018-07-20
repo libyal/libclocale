@@ -37,8 +37,11 @@
 
 #include <libclocale/extern.h>
 
+#define LIBCLOCALE_EXTERN_VARIABLE	LIBCLOCALE_EXTERN
+
 #else
-#define LIBCLOCALE_EXTERN	/* extern */
+#define LIBCLOCALE_EXTERN		/* extern */
+#define LIBCLOCALE_EXTERN_VARIABLE	extern
 
 #endif /* !defined( HAVE_LOCAL_LIBCLOCALE ) */
 
