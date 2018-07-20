@@ -86,7 +86,7 @@ int libclocale_GetLocaleInfoA(
 	return( result );
 }
 
-#endif
+#endif /* defined( WINAPI ) && ( WINVER < 0x0500 ) */
 
 /* Retrieves the codepage for the locale character set
  * The codepage is set to 0 if the character set is UTF-8
@@ -335,6 +335,7 @@ int libclocale_locale_get_decimal_point(
 #if defined( WINAPI )
 	DWORD error_code          = 0;
 	DWORD locale_data         = 0;
+	int read_count            = 0;
 #else
 	struct lconv *locale_data = NULL;
 #endif
@@ -354,51 +355,26 @@ int libclocale_locale_get_decimal_point(
 
 #if defined( WINAPI )
 #if ( WINVER >= 0x0600 )
-	if( GetLocaleInfoEx(
-	     LOCALE_NAME_USER_DEFAULT,
-	     LOCALE_SDECIMAL,
-	     (LPWSTR) &locale_data,
-	     sizeof( DWORD ) / sizeof( wchar_t ) ) == 0 )
-	{
-		error_code = GetLastError();
-
-		libcerror_system_set_error(
-		 error,
-		 LIBCERROR_ERROR_DOMAIN_RUNTIME,
-		 LIBCERROR_RUNTIME_ERROR_GET_FAILED,
-		 error_code,
-		 "%s: unable to retrieve locale information.",
-		 function );
-
-		return( -1 );
-	}
+	read_count = GetLocaleInfoEx(
+	              LOCALE_NAME_USER_DEFAULT,
+	              LOCALE_SDECIMAL,
+	              (LPWSTR) &locale_data,
+	              sizeof( DWORD ) / sizeof( wchar_t ) );
 
 #elif ( WINVER >= 0x0500 )
-	if( GetLocaleInfoA(
-	     LOCALE_USER_DEFAULT,
-	     LOCALE_SDECIMAL,
-	     (LPSTR) &locale_data,
-	     sizeof( DWORD ) / sizeof( char ) ) == 0 )
-	{
-		error_code = GetLastError();
-
-		libcerror_system_set_error(
-		 error,
-		 LIBCERROR_ERROR_DOMAIN_RUNTIME,
-		 LIBCERROR_RUNTIME_ERROR_GET_FAILED,
-		 error_code,
-		 "%s: unable to retrieve locale information.",
-		 function );
-
-		return( -1 );
-	}
-
+	read_count = GetLocaleInfoA(
+	              LOCALE_USER_DEFAULT,
+	              LOCALE_SDECIMAL,
+	              (LPSTR) &locale_data,
+	              sizeof( DWORD ) / sizeof( char ) );
 #else
-	if( libclocale_GetLocaleInfoA(
-	     LOCALE_USER_DEFAULT,
-	     LOCALE_SDECIMAL,
-	     (LPSTR) &locale_data,
-	     sizeof( DWORD ) / sizeof( char ) ) == 0 )
+	read_count = libclocale_GetLocaleInfoA(
+	              LOCALE_USER_DEFAULT,
+	              LOCALE_SDECIMAL,
+	              (LPSTR) &locale_data,
+	              sizeof( DWORD ) / sizeof( char ) );
+#endif
+	if( read_count == 0 )
 	{
 		error_code = GetLastError();
 
@@ -412,8 +388,6 @@ int libclocale_locale_get_decimal_point(
 
 		return( -1 );
 	}
-
-#endif
 	*decimal_point = (int) locale_data;
 
 #else

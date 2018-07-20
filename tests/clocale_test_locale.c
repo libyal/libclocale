@@ -32,6 +32,42 @@
 #include "clocale_test_macros.h"
 #include "clocale_test_unused.h"
 
+#if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 )
+
+/* Tests the libclocale_GetLocaleInfoA function
+ * Returns 1 if successful or 0 if not
+ */
+int clocale_test_GetLocaleInfoA(
+     void )
+{
+	DWORD locale_data = 0;
+	int read_count    = 0;
+
+	/* Test regular cases
+	 */
+	read_count = libclocale_GetLocaleInfoA(
+	              LOCALE_USER_DEFAULT,
+	              LOCALE_SDECIMAL,
+	              (LPSTR) &locale_data,
+	              sizeof( DWORD ) / sizeof( char ) );
+
+	CLOCALE_TEST_ASSERT_NOT_EQUAL_INT(
+	 "read_count",
+	 read_count,
+	 0 );
+
+	/* Test error cases
+	 */
+
+	return( 1 );
+
+on_error:
+	return( 0 );
+}
+
+#endif /* defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER <= 0x0500 ) */
+
+
 /* Tests the libclocale_locale_get_codepage function
  * Returns 1 if successful or 0 if not
  */
@@ -42,6 +78,8 @@ int clocale_test_locale_get_codepage(
 	int codepage             = 0;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_locale_get_codepage(
 	          &codepage,
 	          &error );
@@ -94,6 +132,8 @@ int clocale_test_locale_get_decimal_point(
 	int decimal_point        = 0;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_locale_get_decimal_point(
 	          &decimal_point,
 	          &error );
@@ -150,6 +190,14 @@ int main(
 {
 	CLOCALE_TEST_UNREFERENCED_PARAMETER( argc )
 	CLOCALE_TEST_UNREFERENCED_PARAMETER( argv )
+
+#if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 )
+
+	CLOCALE_TEST_RUN(
+	 "libclocale_GetLocaleInfoA",
+	 clocale_test_GetLocaleInfoA );
+
+#endif /* defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 ) */
 
 	CLOCALE_TEST_RUN(
 	 "libclocale_locale_get_codepage",

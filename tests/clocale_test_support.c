@@ -42,6 +42,8 @@ int clocale_test_get_version(
 	const char *version_string = NULL;
 	int result                 = 0;
 
+	/* Test regular cases
+	 */
 	version_string = libclocale_get_version();
 
 	result = narrow_string_compare(
@@ -69,6 +71,8 @@ int clocale_test_initialize(
 	libcerror_error_t *error = NULL;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_initialize(
 	          "test",
 	          &error );
@@ -82,9 +86,32 @@ int clocale_test_initialize(
 	 "error",
 	 error );
 
+	/* Test error cases
+	 */
+	result = libclocale_initialize(
+	          NULL,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
 	return( 1 );
 
 on_error:
+	if( error != NULL )
+	{
+		libcerror_error_free(
+		 &error );
+	}
 	return( 0 );
 }
 
