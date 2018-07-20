@@ -42,6 +42,8 @@ int clocale_test_codepage_get(
 	int codepage             = 0;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_codepage_get(
 	          &codepage,
 	          &error );
@@ -93,6 +95,8 @@ int clocale_test_codepage_set(
 	libcerror_error_t *error = NULL;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_codepage_set(
 	          LIBCLOCALE_CODEPAGE_ASCII,
 	          &error );
@@ -145,6 +149,8 @@ int clocale_test_codepage_copy_from_string(
 	int codepage             = 0;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_codepage_copy_from_string(
 	          &codepage,
 	          "ascii",
@@ -157,13 +163,60 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 1 );
 
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ASCII );
+
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
 	 error );
 
 	result = libclocale_codepage_copy_from_string(
 	          &codepage,
-	          "iso8859-1",
+	          "iso_8859_1",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_1 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso-8859-2",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_2 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-3",
 	          9,
 	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
 	          &error );
@@ -172,6 +225,263 @@ int clocale_test_codepage_copy_from_string(
 	 "result",
 	 result,
 	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_3 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-4",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_4 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-5",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_5 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-6",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_6 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-7",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_7 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-8",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_8 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-9",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_9 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-10",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_10 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-11",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_11 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-13",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_13 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-14",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_14 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-15",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_15 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "iso8859-16",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_16 );
 
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
@@ -189,6 +499,179 @@ int clocale_test_codepage_copy_from_string(
 	 result,
 	 1 );
 
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_KOI8_R );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "koi8_u",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_KOI8,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_KOI8_U );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "windows874",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_874 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "windows-932",
+	          11,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_932 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "windows-936",
+	          11,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_936 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp949",
+	          5,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_949 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "ms950",
+	          5,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_950 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1250",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1250 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1251",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1251 );
+
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
 	 error );
@@ -204,6 +687,153 @@ int clocale_test_codepage_copy_from_string(
 	 "result",
 	 result,
 	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1252 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1253",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1253 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1254",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1254 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1255",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1255 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1256",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1256 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1257",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1257 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1258",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1258 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "cp1252",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 0 );
 
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
@@ -234,6 +864,25 @@ int clocale_test_codepage_copy_from_string(
 	          &codepage,
 	          NULL,
 	          5,
+	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
+	          "ascii",
+	          (size_t) SSIZE_MAX + 1,
 	          0,
 	          &error );
 
@@ -291,6 +940,8 @@ int clocale_test_codepage_copy_from_string_wide(
 	int codepage             = 0;
 	int result               = 0;
 
+	/* Test regular cases
+	 */
 	result = libclocale_codepage_copy_from_string_wide(
 	          &codepage,
 	          L"ascii",
@@ -303,13 +954,60 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 1 );
 
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ASCII );
+
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
 	 error );
 
 	result = libclocale_codepage_copy_from_string_wide(
 	          &codepage,
-	          L"iso8859-1",
+	          L"iso_8859_1",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_1 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso-8859-2",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_2 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-3",
 	          9,
 	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
 	          &error );
@@ -318,6 +1016,263 @@ int clocale_test_codepage_copy_from_string_wide(
 	 "result",
 	 result,
 	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_3 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-4",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_4 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-5",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_5 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-6",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_6 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-7",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_7 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-8",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_8 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-9",
+	          9,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_9 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-10",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_10 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-11",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_11 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-13",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_13 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-14",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_14 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-15",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_15 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"iso8859-16",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_ISO_8859_16 );
 
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
@@ -335,6 +1290,179 @@ int clocale_test_codepage_copy_from_string_wide(
 	 result,
 	 1 );
 
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_KOI8_R );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"koi8_u",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_KOI8,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_KOI8_U );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"windows874",
+	          10,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_874 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"windows-932",
+	          11,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_932 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"windows-936",
+	          11,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_936 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp949",
+	          5,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_949 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"ms950",
+	          5,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_950 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1250",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1250 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1251",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1251 );
+
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
 	 error );
@@ -350,6 +1478,153 @@ int clocale_test_codepage_copy_from_string_wide(
 	 "result",
 	 result,
 	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1252 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1253",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1253 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1254",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1254 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1255",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1255 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1256",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1256 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1257",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1257 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1258",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1258 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"cp1252",
+	          6,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_ISO_8859,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 0 );
 
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
@@ -380,6 +1655,25 @@ int clocale_test_codepage_copy_from_string_wide(
 	          &codepage,
 	          NULL,
 	          5,
+	          0,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"ascii",
+	          (size_t) SSIZE_MAX + 1,
 	          0,
 	          &error );
 
