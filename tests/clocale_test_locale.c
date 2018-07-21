@@ -27,12 +27,191 @@
 #include <stdlib.h>
 #endif
 
+#if defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520
+#include <locale.h>
+#elif defined( HAVE_LOCALE_H )
+#include <locale.h>
+#endif
+
+#if defined( HAVE_LANGINFO_H )
+#include <langinfo.h>
+#endif
+
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#define __USE_GNU
+#include <dlfcn.h>
+#undef __USE_GNU
+#endif
+
 #include "clocale_test_libcerror.h"
 #include "clocale_test_libclocale.h"
 #include "clocale_test_macros.h"
 #include "clocale_test_unused.h"
 
 #include "../libclocale/libclocale_locale.h"
+
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+
+#if defined( HAVE_GETENV ) || defined( WINAPI )
+static char *(*clocale_test_real_getenv)(const char *)         = NULL;
+
+int clocale_test_getenv_attempts_before_fail                   = -1;
+#endif
+
+static struct lconv *(*clocale_test_real_localeconv)(void)     = NULL;
+
+int clocale_test_localeconv_attempts_before_fail               = -1;
+
+#if defined( HAVE_LANGINFO_CODESET )
+static char *(*clocale_test_real_nl_langinfo)(nl_item)         = NULL;
+
+int clocale_test_nl_langinfo_attempts_before_fail              = -1;
+#endif
+
+#if defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 )
+static char *(*clocale_test_real_setlocale)(int, const char *) = NULL;
+
+int clocale_test_setlocale_attempts_before_fail                = -1;
+#endif
+
+#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
+
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+
+#if defined( HAVE_GETENV ) || defined( WINAPI )
+
+/* Custom getenv for testing error cases
+ * Returns the environment variable if successful or NULL otherwise
+ */
+char *getenv(
+       const char *name )
+{
+	char *result = NULL;
+
+	if( clocale_test_real_getenv == NULL )
+	{
+		clocale_test_real_getenv = dlsym(
+		                            RTLD_NEXT,
+		                            "getenv" );
+	}
+	if( clocale_test_getenv_attempts_before_fail == 0 )
+	{
+		clocale_test_getenv_attempts_before_fail = -1;
+
+		return( NULL );
+	}
+	else if( clocale_test_getenv_attempts_before_fail > 0 )
+	{
+		clocale_test_getenv_attempts_before_fail--;
+	}
+	result = clocale_test_real_getenv(
+	          name );
+
+	return( result );
+}
+
+#endif /* defined( HAVE_GETENV ) || defined( WINAPI ) */
+
+/* Custom localeconv for testing error cases
+ * Returns the locale information if successful or NULL otherwise
+ */
+struct lconv *localeconv(
+               void )
+{
+	struct lconv *result = NULL;
+
+	if( clocale_test_real_localeconv == NULL )
+	{
+		clocale_test_real_localeconv = dlsym(
+		                                RTLD_NEXT,
+		                                "localeconv" );
+	}
+	if( clocale_test_localeconv_attempts_before_fail == 0 )
+	{
+		clocale_test_localeconv_attempts_before_fail = -1;
+
+		return( NULL );
+	}
+	else if( clocale_test_localeconv_attempts_before_fail > 0 )
+	{
+		clocale_test_localeconv_attempts_before_fail--;
+	}
+	result = clocale_test_real_localeconv();
+
+	return( result );
+}
+
+#if defined( HAVE_LANGINFO_CODESET )
+
+/* Custom nl_langinfo for testing error cases
+ * Returns the language information if successful or NULL otherwise
+ */
+char *nl_langinfo(
+       nl_item item )
+{
+	char *result = NULL;
+
+	if( clocale_test_real_nl_langinfo == NULL )
+	{
+		clocale_test_real_nl_langinfo = dlsym(
+		                                 RTLD_NEXT,
+		                                 "nl_langinfo" );
+	}
+	if( clocale_test_nl_langinfo_attempts_before_fail == 0 )
+	{
+		clocale_test_nl_langinfo_attempts_before_fail = -1;
+
+		return( NULL );
+	}
+	else if( clocale_test_nl_langinfo_attempts_before_fail > 0 )
+	{
+		clocale_test_nl_langinfo_attempts_before_fail--;
+	}
+	result = clocale_test_real_nl_langinfo(
+	          item );
+
+	return( result );
+}
+
+#endif /* defined( HAVE_LANGINFO_CODESET ) */
+
+#if defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 )
+
+/* Custom setlocale for testing error cases
+ * Returns the locale set identifier if successful or NULL otherwise
+ */
+char *setlocale(
+       int category,
+       const char *locale )
+{
+	char *result = NULL;
+
+	if( clocale_test_real_setlocale == NULL )
+	{
+		clocale_test_real_setlocale = dlsym(
+		                               RTLD_NEXT,
+		                               "setlocale" );
+	}
+	if( clocale_test_setlocale_attempts_before_fail == 0 )
+	{
+		clocale_test_setlocale_attempts_before_fail = -1;
+
+		return( NULL );
+	}
+	else if( clocale_test_setlocale_attempts_before_fail > 0 )
+	{
+		clocale_test_setlocale_attempts_before_fail--;
+	}
+	result = clocale_test_real_setlocale(
+	          category,
+	          locale );
+
+	return( result );
+}
+
+#endif /* defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 ) */
+
+#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
 
 #if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 )
 
@@ -488,14 +667,120 @@ int clocale_test_locale_get_codepage(
 	          &codepage,
 	          &error );
 
-	CLOCALE_TEST_ASSERT_NOT_EQUAL_INT(
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
 	 "result",
 	 result,
-	 -1 );
+	 1 );
 
 	CLOCALE_TEST_ASSERT_IS_NULL(
 	 "error",
 	 error );
+
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+
+#if defined( HAVE_LANGINFO_CODESET )
+
+	/* Test libclocale_locale_get_codepage with nl_langinfo failing
+	 */
+	clocale_test_nl_langinfo_attempts_before_fail = 0;
+
+	result = libclocale_locale_get_codepage(
+	          &codepage,
+	          &error );
+
+	if( clocale_test_nl_langinfo_attempts_before_fail != -1 )
+	{
+		clocale_test_nl_langinfo_attempts_before_fail = -1;
+	}
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+#endif /* defined( HAVE_LANGINFO_CODESET ) */
+
+#if defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 )
+
+	/* Test libclocale_locale_get_codepage with nl_langinfo and setlocale failing
+	 */
+#if defined( HAVE_LANGINFO_CODESET )
+	clocale_test_nl_langinfo_attempts_before_fail = 0;
+#endif
+	clocale_test_setlocale_attempts_before_fail   = 0;
+
+	result = libclocale_locale_get_codepage(
+	          &codepage,
+	          &error );
+
+#if defined( HAVE_LANGINFO_CODESET )
+	if( clocale_test_nl_langinfo_attempts_before_fail != -1 )
+	{
+		clocale_test_nl_langinfo_attempts_before_fail = -1;
+	}
+#endif
+	if( clocale_test_setlocale_attempts_before_fail != -1 )
+	{
+		clocale_test_setlocale_attempts_before_fail = -1;
+	}
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+#endif /* defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 ) */
+
+#if defined( HAVE_GETENV ) || defined( WINAPI )
+
+	/* Test libclocale_locale_get_codepage with nl_langinfo, setlocale and getenv failing
+	 */
+#if defined( HAVE_LANGINFO_CODESET )
+	clocale_test_nl_langinfo_attempts_before_fail = 0;
+#endif
+#if defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 )
+	clocale_test_setlocale_attempts_before_fail   = 0;
+#endif
+	clocale_test_getenv_attempts_before_fail      = 0;
+
+	result = libclocale_locale_get_codepage(
+	          &codepage,
+	          &error );
+
+#if defined( HAVE_LANGINFO_CODESET )
+	if( clocale_test_nl_langinfo_attempts_before_fail != -1 )
+	{
+		clocale_test_nl_langinfo_attempts_before_fail = -1;
+	}
+#endif
+#if defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 )
+	if( clocale_test_setlocale_attempts_before_fail != -1 )
+	{
+		clocale_test_setlocale_attempts_before_fail = -1;
+	}
+#endif
+	if( clocale_test_getenv_attempts_before_fail != -1 )
+	{
+		clocale_test_getenv_attempts_before_fail = -1;
+	}
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+#endif /* defined( HAVE_GETENV ) || defined( WINAPI ) */
+
+#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
 
 	/* Test error cases
 	 */
@@ -568,6 +853,36 @@ int clocale_test_locale_get_decimal_point(
 
 	libcerror_error_free(
 	 &error );
+
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+
+	/* Test libclocale_locale_get_decimal_point with localeconv failing
+	 */
+	clocale_test_localeconv_attempts_before_fail = 0;
+
+	result = libclocale_locale_get_decimal_point(
+	          &decimal_point,
+	          &error );
+
+	if( clocale_test_localeconv_attempts_before_fail != -1 )
+	{
+		clocale_test_localeconv_attempts_before_fail = -1;
+	}
+	else
+	{
+		CLOCALE_TEST_ASSERT_EQUAL_INT(
+		 "result",
+		 result,
+		 -1 );
+
+		CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+		 "error",
+		 error );
+
+		libcerror_error_free(
+		 &error );
+	}
+#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
 
 	return( 1 );
 

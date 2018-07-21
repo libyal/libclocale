@@ -278,7 +278,7 @@ int libclocale_locale_get_codepage_from_charset(
 /* Retrieves the codepage for the locale character set
  * The codepage is set to 0 if the character set is UTF-8
  * and will default to LIBCLOCALE_CODEPAGE_ASCII the codepage cannot be determined
- * Returns 1 if success, 0 if no codepage could be found or -1 on error
+ * Returns 1 if successful or -1 on error
  */
 int libclocale_locale_get_codepage(
      int *codepage,
@@ -355,7 +355,9 @@ int libclocale_locale_get_codepage(
 		if( ( locale == NULL )
 		 || ( locale[ 0 ] == 0 ) )
 		{
-			return( LIBCLOCALE_CODEPAGE_ASCII );
+			*codepage = LIBCLOCALE_CODEPAGE_ASCII;
+
+			return( 1 );
 		}
 		locale_length = narrow_string_length(
 				 locale );
@@ -367,7 +369,9 @@ int libclocale_locale_get_codepage(
 
 		if( charset == NULL )
 		{
-			return( LIBCLOCALE_CODEPAGE_ASCII );
+			*codepage = LIBCLOCALE_CODEPAGE_ASCII;
+
+			return( 1 );
 		}
 		charset++;
 
