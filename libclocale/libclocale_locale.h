@@ -42,6 +42,12 @@ int libclocale_GetLocaleInfo(
 
 #endif /* defined( WINAPI ) && ( WINVER < 0x0500 ) */
 
+int libclocale_locale_get_codepage_from_charset(
+     int *codepage,
+     char *charset,
+     size_t charset_length,
+     libcerror_error_t **error );
+
 LIBCLOCALE_EXTERN \
 int libclocale_locale_get_codepage(
      int *codepage,

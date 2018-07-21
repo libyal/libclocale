@@ -32,6 +32,8 @@
 #include "clocale_test_macros.h"
 #include "clocale_test_unused.h"
 
+#include "../libclocale/libclocale_locale.h"
+
 #if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 )
 
 /* Tests the libclocale_GetLocaleInfoA function
@@ -67,6 +69,408 @@ on_error:
 
 #endif /* defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER <= 0x0500 ) */
 
+#if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT )
+
+/* Tests the libclocale_locale_get_codepage_from_charset function
+ * Returns 1 if successful or 0 if not
+ */
+int clocale_test_locale_get_codepage_from_charset(
+     void )
+{
+	libcerror_error_t *error = NULL;
+	int codepage             = 0;
+	int result               = 0;
+
+	/* Test regular cases
+	 */
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "UTF-8",
+	          5,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 0 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "874",
+	          3,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_874 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "932",
+	          3,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_932 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "936",
+	          3,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_936 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "949",
+	          3,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_949 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "950",
+	          3,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_950 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1250",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1250 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1251",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1251 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1252",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1252 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1253",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1253 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1254",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1254 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1255",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1255 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1256",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1256 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1257",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1257 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "1258",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_1258 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "utf8",
+	          4,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 0 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	/* Test error cases
+	 */
+	result = libclocale_locale_get_codepage_from_charset(
+	          NULL,
+	          "UTF-8",
+	          5,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          NULL,
+	          5,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libclocale_locale_get_codepage_from_charset(
+	          &codepage,
+	          "UTF-8",
+	          (size_t) SSIZE_MAX + 1,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CLOCALE_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
+	return( 1 );
+
+on_error:
+	if( error != NULL )
+	{
+		libcerror_error_free(
+		 &error );
+	}
+	return( 0 );
+}
+
+#endif /* defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) */
 
 /* Tests the libclocale_locale_get_codepage function
  * Returns 1 if successful or 0 if not
@@ -198,6 +602,14 @@ int main(
 	 clocale_test_GetLocaleInfoA );
 
 #endif /* defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 ) */
+
+#if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT )
+
+	CLOCALE_TEST_RUN(
+	 "libclocale_locale_get_codepage_from_charset",
+	 clocale_test_locale_get_codepage_from_charset );
+
+#endif /* defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) */
 
 	CLOCALE_TEST_RUN(
 	 "libclocale_locale_get_codepage",

@@ -88,6 +88,193 @@ int libclocale_GetLocaleInfoA(
 
 #endif /* defined( WINAPI ) && ( WINVER < 0x0500 ) */
 
+/* Retrieves the codepage from the locale character set
+ * The codepage is set to 0 if the character set is UTF-8
+ * and will default to LIBCLOCALE_CODEPAGE_ASCII the codepage cannot be determined
+ * Returns 1 if successful or -1 on error
+ */
+int libclocale_locale_get_codepage_from_charset(
+     int *codepage,
+     char *charset,
+     size_t charset_length,
+     libcerror_error_t **error )
+{
+	static char *function = "libclocale_locale_get_codepage_from_charset";
+
+	if( codepage == NULL )
+	{
+		libcerror_error_set(
+		 error,
+		 LIBCERROR_ERROR_DOMAIN_ARGUMENTS,
+		 LIBCERROR_ARGUMENT_ERROR_INVALID_VALUE,
+		 "%s: invalid codepage.",
+		 function );
+
+		return( -1 );
+	}
+	if( charset == NULL )
+	{
+		libcerror_error_set(
+		 error,
+		 LIBCERROR_ERROR_DOMAIN_ARGUMENTS,
+		 LIBCERROR_ARGUMENT_ERROR_INVALID_VALUE,
+		 "%s: invalid charset.",
+		 function );
+
+		return( -1 );
+	}
+	if( charset_length > (size_t) SSIZE_MAX )
+	{
+		libcerror_error_set(
+		 error,
+		 LIBCERROR_ERROR_DOMAIN_ARGUMENTS,
+		 LIBCERROR_ARGUMENT_ERROR_VALUE_EXCEEDS_MAXIMUM,
+		 "%s: invalid charset length value exceeds maximum.",
+		 function );
+
+		return( -1 );
+	}
+	/* Determine codepage
+	 */
+	*codepage = -1;
+
+	if( *codepage == -1 )
+	{
+		if( charset_length == 5 )
+		{
+			if( narrow_string_compare_no_case(
+			     "UTF-8",
+			     charset,
+			     5 ) == 0 )
+			{
+				*codepage = 0;
+			}
+		}
+	}
+	if( *codepage == -1 )
+	{
+		if( charset_length >= 3 )
+		{
+			if( narrow_string_compare(
+			     "874",
+			     charset,
+			     3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_874;
+			}
+			else if( narrow_string_compare(
+			          "932",
+			          charset,
+			          3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_932;
+			}
+			else if( narrow_string_compare(
+			          "936",
+			          charset,
+			          3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_936;
+			}
+			else if( narrow_string_compare(
+			          "949",
+			          charset,
+			          3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_949;
+			}
+			else if( narrow_string_compare(
+			          "950",
+			          charset,
+			          3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_950;
+			}
+		}
+	}
+	if( *codepage == -1 )
+	{
+		if( charset_length >= 4 )
+		{
+			if( narrow_string_compare(
+			     "1250",
+			     charset,
+			     4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1250;
+			}
+			else if( narrow_string_compare(
+				  "1251",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1251;
+			}
+			else if( narrow_string_compare(
+				  "1252",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1252;
+			}
+			else if( narrow_string_compare(
+				  "1253",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1253;
+			}
+			else if( narrow_string_compare(
+				  "1254",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1254;
+			}
+			else if( narrow_string_compare(
+				  "1255",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1255;
+			}
+			else if( narrow_string_compare(
+				  "1256",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1256;
+			}
+			else if( narrow_string_compare(
+				  "1257",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1257;
+			}
+			else if( narrow_string_compare(
+				  "1258",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1258;
+			}
+			else if( narrow_string_compare_no_case(
+				  "utf8",
+				  charset,
+				  4 ) == 0 )
+			{
+				*codepage = 0;
+			}
+		}
+	}
+	if( *codepage == -1 )
+	{
+		*codepage = LIBCLOCALE_CODEPAGE_ASCII;
+	}
+	return( 1 );
+}
+
 /* Retrieves the codepage for the locale character set
  * The codepage is set to 0 if the character set is UTF-8
  * and will default to LIBCLOCALE_CODEPAGE_ASCII the codepage cannot be determined
@@ -186,139 +373,20 @@ int libclocale_locale_get_codepage(
 
 		charset_length = locale_length - (size_t) ( charset - locale );
 	}
-	/* Determine codepage
-	 */
-	*codepage = LIBCLOCALE_CODEPAGE_ASCII;
+	if( libclocale_locale_get_codepage_from_charset(
+	     codepage,
+	     charset,
+	     charset_length,
+	     error ) != 1 )
+	{
+		libcerror_error_set(
+		 error,
+		 LIBCERROR_ERROR_DOMAIN_RUNTIME,
+		 LIBCERROR_RUNTIME_ERROR_GET_FAILED,
+		 "%s: unable to retrieve codepage.",
+		 function );
 
-	if( *codepage == LIBCLOCALE_CODEPAGE_ASCII )
-	{
-		if( charset_length == 5 )
-		{
-			if( narrow_string_compare(
-			     "UTF-8",
-			     charset,
-			     5 ) == 0 )
-			{
-				*codepage = 0;
-			}
-		}
-	}
-	if( *codepage == LIBCLOCALE_CODEPAGE_ASCII )
-	{
-		if( charset_length >= 3 )
-		{
-			if( narrow_string_compare(
-			     "874",
-			     charset,
-			     3 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_874;
-			}
-			else if( narrow_string_compare(
-			          "932",
-			          charset,
-			          3 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_932;
-			}
-			else if( narrow_string_compare(
-			          "936",
-			          charset,
-			          3 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_936;
-			}
-			else if( narrow_string_compare(
-			          "949",
-			          charset,
-			          3 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_949;
-			}
-			else if( narrow_string_compare(
-			          "950",
-			          charset,
-			          3 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_950;
-			}
-		}
-	}
-	if( *codepage == LIBCLOCALE_CODEPAGE_ASCII )
-	{
-		if( charset_length >= 4 )
-		{
-			if( narrow_string_compare(
-			     "1250",
-			     charset,
-			     4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1250;
-			}
-			else if( narrow_string_compare(
-				  "1251",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1251;
-			}
-			else if( narrow_string_compare(
-				  "1252",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1252;
-			}
-			else if( narrow_string_compare(
-				  "1253",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1253;
-			}
-			else if( narrow_string_compare(
-				  "1254",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1254;
-			}
-			else if( narrow_string_compare(
-				  "1255",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1255;
-			}
-			else if( narrow_string_compare(
-				  "1256",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1256;
-			}
-			else if( narrow_string_compare(
-				  "1257",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1257;
-			}
-			else if( narrow_string_compare(
-				  "1258",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_1258;
-			}
-			else if( narrow_string_compare(
-				  "utf8",
-				  charset,
-				  4 ) == 0 )
-			{
-				*codepage = 0;
-			}
-		}
+		return( -1 );
 	}
 	return( 1 );
 }
