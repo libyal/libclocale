@@ -1,6 +1,6 @@
 dnl Checks for required headers and functions
 dnl
-dnl Version: 20170903
+dnl Version: 20180407
 
 dnl Function to detect whether nl_langinfo supports CODESET
 AC_DEFUN([AX_LIBCLOCALE_CHECK_FUNC_LANGINFO_CODESET],
@@ -68,5 +68,5 @@ AC_DEFUN([AX_LIBCLOCALE_CHECK_LOCAL],
     ])
 
   AX_LIBCLOCALE_CHECK_FUNC_LANGINFO_CODESET
- ])
+  ])
 

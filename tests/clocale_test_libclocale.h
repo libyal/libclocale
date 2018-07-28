@@ -24,13 +24,6 @@
 
 #include <common.h>
 
-/* If Cygwin libtool DLL support is enabled and do not want to create static
- * executables set LIBCLOCALE_DLL_IMPORT before including libclocale.h
- */
-#if defined( _WIN32 ) && defined( DLL_EXPORT ) && !defined( HAVE_STATIC_EXECUTABLES )
-#define LIBCLOCALE_DLL_IMPORT
-#endif
-
 #include <libclocale.h>
 
 #endif /* !defined( _CLOCALE_TEST_LIBCLOCALE_H ) */

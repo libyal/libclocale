@@ -2,7 +2,8 @@ AM_CPPFLAGS = \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/common \
-	@LIBCERROR_CPPFLAGS@
+	@LIBCERROR_CPPFLAGS@ \
+	@LIBCLOCALE_DLL_EXPORT@
 
 lib_LTLIBRARIES = libclocale.la
 

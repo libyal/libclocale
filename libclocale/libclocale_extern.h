@@ -28,13 +28,6 @@
  */
 #if !defined( HAVE_LOCAL_LIBCLOCALE )
 
-/* If libtool DLL support is enabled set LIBCLOCALE_DLL_EXPORT
- * before including libclocale/extern.h
- */
-#if defined( _WIN32 ) && defined( DLL_EXPORT )
-#define LIBCLOCALE_DLL_EXPORT
-#endif
-
 #include <libclocale/extern.h>
 
 #define LIBCLOCALE_EXTERN_VARIABLE	LIBCLOCALE_EXTERN
