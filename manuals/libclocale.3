@@ -1,11 +1,9 @@
-.Dd January  5, 2017
+.Dd March  1, 2019
 .Dt libclocale 3
 .Os libclocale
 .Sh NAME
 .Nm libclocale.h
 .Nd Library to support cross-platform C locale functions
-.Sh LIBRARY
-.Lb libclocale
 .Sh SYNOPSIS
 .In libclocale.h
 .Pp
@@ -13,25 +11,25 @@ Support functions
 .Ft const char *
 .Fn libclocale_get_version "void"
 .Ft int
-.Fn libclocale_initialize "const char *domain_name, libclocale_error_t **error"
+.Fn libclocale_initialize "const char *domain_name" "libclocale_error_t **error"
 .Pp
 Codepage functions
 .Ft int
-.Fn libclocale_codepage_get "int *codepage, libclocale_error_t **error"
+.Fn libclocale_codepage_get "int *codepage" "libclocale_error_t **error"
 .Ft int
-.Fn libclocale_codepage_set "int codepage, libclocale_error_t **error"
+.Fn libclocale_codepage_set "int codepage" "libclocale_error_t **error"
 .Ft int
-.Fn libclocale_codepage_copy_from_string "int *codepage, const char *string, size_t string_length, uint32_t feature_flags, libclocale_error_t **error"
+.Fn libclocale_codepage_copy_from_string "int *codepage" "const char *string" "size_t string_length" "uint32_t feature_flags" "libclocale_error_t **error"
 .Pp
 Available when compiled with wide character string support:
 .Ft int
-.Fn libclocale_codepage_copy_from_string_wide "int *codepage, const wchar_t *string, size_t string_length, uint32_t feature_flags, libclocale_error_t **error"
+.Fn libclocale_codepage_copy_from_string_wide "int *codepage" "const wchar_t *string" "size_t string_length" "uint32_t feature_flags" "libclocale_error_t **error"
 .Pp
 Locale functions
 .Ft int
-.Fn libclocale_locale_get_codepage "int *codepage, libclocale_error_t **error"
+.Fn libclocale_locale_get_codepage "int *codepage" "libclocale_error_t **error"
 .Ft int
-.Fn libclocale_locale_get_decimal_point "int *decimal_point, libclocale_error_t **error"
+.Fn libclocale_locale_get_decimal_point "int *decimal_point" "libclocale_error_t **error"
 .Sh DESCRIPTION
 The
 .Fn libclocale_get_version
@@ -44,8 +42,8 @@ None
 .Sh FILES
 None
 .Sh NOTES
-libclocale allows to be compiled with wide character support (wchar_t).
-
+libclocale can be compiled with wide character support (wchar_t).
+.sp
 To compile libclocale with wide character support use:
 .Ar ./configure --enable-wide-character-type=yes
  or define:
@@ -53,7 +51,7 @@ To compile libclocale with wide character support use:
  or
 .Ar UNICODE
  during compilation.
-
+.sp
 .Ar LIBCLOCALE_WIDE_CHARACTER_TYPE
  in libclocale/features.h can be used to determine if libclocale was compiled with wide character support.
 .Sh BUGS
@@ -62,7 +60,7 @@ Please report bugs of any kind on the project issue tracker: https://github.com/
 These man pages are generated from "libclocale.h".
 .Sh COPYRIGHT
 Copyright (C) 2010-2019, Joachim Metz <joachim.metz@gmail.com>.
-
+.sp
 This is free software; see the source for copying conditions.
 There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 .Sh SEE ALSO
