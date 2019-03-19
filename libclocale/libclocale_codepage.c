@@ -311,6 +311,13 @@ int libclocale_codepage_copy_from_string(
 
 				codepage_set = LIBCLOCALE_CODEPAGE_SET_WINDOWS;
 			}
+			else if( narrow_string_compare_no_case(
+			          string,
+			          "gbk",
+			          3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_936;
+			}
 		}
 	}
 	if( codepage_set == LIBCLOCALE_CODEPAGE_SET_ISO_8859 )
@@ -709,6 +716,13 @@ int libclocale_codepage_copy_from_string_wide(
 				string_index = 2;
 
 				codepage_set = LIBCLOCALE_CODEPAGE_SET_WINDOWS;
+			}
+			else if( wide_string_compare_no_case(
+			          string,
+			          L"gbk",
+			          3 ) == 0 )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_936;
 			}
 		}
 	}
