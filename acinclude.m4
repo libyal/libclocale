@@ -70,3 +70,29 @@ AC_DEFUN([AX_LIBCLOCALE_CHECK_LOCAL],
   AX_LIBCLOCALE_CHECK_FUNC_LANGINFO_CODESET
   ])
 
+dnl Function to check if DLL support is needed
+AC_DEFUN([AX_LIBCLOCALE_CHECK_DLL_SUPPORT],
+  [AS_IF(
+    [test "x$enable_shared" = xyes],
+    [AS_CASE(
+      [$host],
+      [*cygwin* | *mingw* | *msys*],
+      [AC_DEFINE(
+        [HAVE_DLLMAIN],
+        [1],
+        [Define to 1 to enable the DllMain function.])
+      AC_SUBST(
+        [HAVE_DLLMAIN],
+        [1])
+
+      AC_SUBST(
+        [LIBCLOCALE_DLL_EXPORT],
+        ["-DLIBCLOCALE_DLL_EXPORT"])
+
+      AC_SUBST(
+        [LIBCLOCALE_DLL_IMPORT],
+        ["-DLIBCLOCALE_DLL_IMPORT"])
+      ])
+    ])
+  ])
+
