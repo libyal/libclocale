@@ -18,9 +18,9 @@ MAINTAINERCLEANFILES = \
 	Makefile.in
 
 distclean: clean
-	/bin/rm -f libclocale.h
-	/bin/rm -f libclocale/definitions.h
-	/bin/rm -f libclocale/features.h
-	/bin/rm -f libclocale/types.h
-	/bin/rm -f Makefile
+	-rm -f libclocale.h
+	-rm -f libclocale/definitions.h
+	-rm -f libclocale/features.h
+	-rm -f libclocale/types.h
+	-rm -f Makefile
 

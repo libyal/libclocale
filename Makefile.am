@@ -58,20 +58,14 @@ library:
 	cd $(srcdir)/po && $(MAKE) $(AM_MAKEFLAGS)
 
 distclean: clean
-	/bin/rm -f Makefile
-	/bin/rm -f config.status
-	/bin/rm -f config.cache
-	/bin/rm -f config.log
-	/bin/rm -f libclocale.pc
-	/bin/rm -f libclocale.spec
+	-rm -f Makefile
+	-rm -f config.status
+	-rm -f config.cache
+	-rm -f config.log
+	-rm -f libclocale.pc
+	-rm -f libclocale.spec
 	@for dir in ${subdirs}; do \
 		(cd $$dir && $(MAKE) distclean) \
 		|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
 	done && test -z "$$fail"
-
-splint:
-	(cd $(srcdir)/libcerror && $(MAKE) splint $(AM_MAKEFLAGS))
-	(cd $(srcdir)/libclocale && $(MAKE) splint $(AM_MAKEFLAGS))
-	(cd $(srcdir)/po && $(MAKE) splint $(AM_MAKEFLAGS))
-	(cd $(srcdir)/tests && $(MAKE) splint $(AM_MAKEFLAGS))
 
