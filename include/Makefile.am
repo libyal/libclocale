@@ -14,13 +14,11 @@ EXTRA_DIST = \
 	libclocale/features.h.in \
 	libclocale/types.h.in
 
-MAINTAINERCLEANFILES = \
+DISTCLEANFILES = \
+	libclocale.h \
+	libclocale/definitions.h \
+	libclocale/features.h \
+	libclocale/types.h \
+	Makefile \
 	Makefile.in
-
-distclean: clean
-	-rm -f libclocale.h
-	-rm -f libclocale/definitions.h
-	-rm -f libclocale/features.h
-	-rm -f libclocale/types.h
-	-rm -f Makefile
 

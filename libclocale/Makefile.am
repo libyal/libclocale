@@ -1,7 +1,7 @@
 AM_CPPFLAGS = \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/common \
+	-I../include -I$(top_srcdir)/include \
+	-I../common -I$(top_srcdir)/common \
 	@LIBCERROR_CPPFLAGS@ \
 	@LIBCLOCALE_DLL_EXPORT@
 
@@ -28,13 +28,11 @@ EXTRA_DIST = \
 	libclocale.rc \
 	libclocale.rc.in
 
-MAINTAINERCLEANFILES = \
+DISTCLEANFILES = \
+	libclocale_definitions.h \
+	libclocale.rc \
+	Makefile \
 	Makefile.in
-
-distclean: clean
-	-rm -f libclocale_definitions.h
-	-rm -f libclocale.rc
-	-rm -f Makefile
 
 sources-local: $(BUILT_SOURCES)
 
