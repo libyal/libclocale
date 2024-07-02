@@ -30,14 +30,8 @@
 
 #include <libclocale/extern.h>
 
-#if defined( __CYGWIN__ ) || defined( __MINGW32__ )
-#define LIBCLOCALE_EXTERN_VARIABLE	extern
 #else
-#define LIBCLOCALE_EXTERN_VARIABLE	LIBCLOCALE_EXTERN
-#endif
-
-#else
-#define LIBCLOCALE_EXTERN		/* extern */
+#define LIBCLOCALE_EXTERN
 #define LIBCLOCALE_EXTERN_VARIABLE	extern
 
 #endif /* !defined( HAVE_LOCAL_LIBCLOCALE ) */
