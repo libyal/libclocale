@@ -33,12 +33,14 @@
 #define LIBCLOCALE_EXTERN __declspec(dllexport)
 
 #elif defined( LIBCLOCALE_DLL_IMPORT )
-#define LIBCLOCALE_EXTERN extern __declspec(dllimport)
+#define LIBCLOCALE_EXTERN __declspec(dllimport)
 
 #else
-#define LIBCLOCALE_EXTERN extern
+#define LIBCLOCALE_EXTERN
 
 #endif
+
+#define LIBCLOCALE_EXTERN_VARIABLE extern LIBCLOCALE_EXTERN
 
 #endif /* !defined( _LIBCLOCALE_EXTERN_H ) */
 
