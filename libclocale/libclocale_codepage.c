@@ -509,6 +509,20 @@ int libclocale_codepage_copy_from_string(
 				}
 			}
 		}
+		else if( ( string_index + 8 ) == string_length )
+		{
+			if( ( string[ string_index     ] == (wchar_t) '9' ) 
+			 && ( string[ string_index + 1 ] == (wchar_t) '4' )
+			 && ( string[ string_index + 2 ] == (wchar_t) '9' ) 
+			 && ( string[ string_index + 3 ] == (wchar_t) '-' )
+			 && ( string[ string_index + 4 ] == (wchar_t) '2' ) 
+			 && ( string[ string_index + 5 ] == (wchar_t) '0' )
+			 && ( string[ string_index + 6 ] == (wchar_t) '0' ) 
+			 && ( string[ string_index + 7 ] == (wchar_t) '0' ) )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_949;
+			}
+		}
 	}
 	if( *codepage != -1 )
 	{
@@ -906,6 +920,20 @@ int libclocale_codepage_copy_from_string_wide(
 					default:
 						break;
 				}
+			}
+		}
+		else if( ( string_index + 8 ) == string_length )
+		{
+			if( ( string[ string_index     ] == (wchar_t) '9' ) 
+			 && ( string[ string_index + 1 ] == (wchar_t) '4' )
+			 && ( string[ string_index + 2 ] == (wchar_t) '9' ) 
+			 && ( string[ string_index + 3 ] == (wchar_t) '-' )
+			 && ( string[ string_index + 4 ] == (wchar_t) '2' ) 
+			 && ( string[ string_index + 5 ] == (wchar_t) '0' )
+			 && ( string[ string_index + 6 ] == (wchar_t) '0' ) 
+			 && ( string[ string_index + 7 ] == (wchar_t) '0' ) )
+			{
+				*codepage = LIBCLOCALE_CODEPAGE_WINDOWS_949;
 			}
 		}
 	}
