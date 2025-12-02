@@ -57,7 +57,7 @@ int libclocale_initialize(
  * Codepage functions
  * ------------------------------------------------------------------------- */
 
-LIBCLOCALE_EXTERN \
+LIBCLOCALE_EXTERN_VARIABLE \
 int libclocale_codepage;
 
 /* Retrieves the narrow system string codepage
