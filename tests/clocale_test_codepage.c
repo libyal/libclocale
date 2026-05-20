@@ -617,6 +617,27 @@ int clocale_test_codepage_copy_from_string(
 
 	result = libclocale_codepage_copy_from_string(
 	          &codepage,
+	          "windows-949-2000",
+	          16,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_949 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string(
+	          &codepage,
 	          "ms950",
 	          5,
 	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
@@ -1453,6 +1474,27 @@ int clocale_test_codepage_copy_from_string_wide(
 	          &codepage,
 	          L"cp949",
 	          5,
+	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
+	          &error );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+	CLOCALE_TEST_ASSERT_EQUAL_INT(
+	 "codepage",
+	 codepage,
+	 LIBCLOCALE_CODEPAGE_WINDOWS_949 );
+
+	CLOCALE_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
+
+	result = libclocale_codepage_copy_from_string_wide(
+	          &codepage,
+	          L"windows-949-2000",
+	          16,
 	          LIBCLOCALE_CODEPAGE_FEATURE_FLAG_HAVE_WINDOWS,
 	          &error );
 
