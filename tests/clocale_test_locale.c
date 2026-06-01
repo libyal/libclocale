@@ -37,10 +37,14 @@
 #include <langinfo.h>
 #endif
 
-#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ )
 #define __USE_GNU
 #include <dlfcn.h>
 #undef __USE_GNU
+#endif
+
+#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#define HAVE_CLOCALE_TEST_FUNCTION_HOOK	1
 #endif
 
 #include "clocale_test_libcerror.h"
@@ -50,7 +54,7 @@
 
 #include "../libclocale/libclocale_locale.h"
 
-#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#if defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK )
 
 #if defined( HAVE_GETENV ) || defined( WINAPI )
 static char *(*clocale_test_real_getenv)(const char *)         = NULL;
@@ -74,9 +78,9 @@ static char *(*clocale_test_real_setlocale)(int, const char *) = NULL;
 int clocale_test_setlocale_attempts_before_fail                = -1;
 #endif
 
-#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
+#endif /* defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK ) */
 
-#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#if defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK )
 
 #if defined( HAVE_GETENV ) || defined( WINAPI )
 
@@ -211,7 +215,7 @@ char *setlocale(
 
 #endif /* defined( HAVE_SETLOCALE ) || ( defined( __BORLANDC__ ) && __BORLANDC__ <= 0x0520 ) */
 
-#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
+#endif /* defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK ) */
 
 #if defined( __GNUC__ ) && !defined( LIBCLOCALE_DLL_IMPORT ) && defined( WINAPI ) && ( WINVER < 0x0500 )
 
@@ -676,7 +680,7 @@ int clocale_test_locale_get_codepage(
 	 "error",
 	 error );
 
-#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#if defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK )
 
 #if defined( HAVE_LANGINFO_CODESET )
 
@@ -780,7 +784,7 @@ int clocale_test_locale_get_codepage(
 
 #endif /* defined( HAVE_GETENV ) || defined( WINAPI ) */
 
-#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
+#endif /* defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK ) */
 
 	/* Test error cases
 	 */
@@ -854,7 +858,7 @@ int clocale_test_locale_get_decimal_point(
 	libcerror_error_free(
 	 &error );
 
-#if defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ )
+#if defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK )
 
 	/* Test libclocale_locale_get_decimal_point with localeconv failing
 	 */
@@ -882,7 +886,7 @@ int clocale_test_locale_get_decimal_point(
 		libcerror_error_free(
 		 &error );
 	}
-#endif /* defined( HAVE_GNU_DL_DLSYM ) && defined( __GNUC__ ) && !defined( __clang__ ) && !defined( __CYGWIN__ ) */
+#endif /* defined( HAVE_CLOCALE_TEST_FUNCTION_HOOK ) */
 
 	return( 1 );
 

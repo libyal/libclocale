@@ -24,6 +24,12 @@
 
 #include <common.h>
 
+#if defined( __has_attribute ) && __has_attribute( visibility ) && !defined( __CYGWIN__ ) && !defined( _WIN32 )
+#define LIBCLOCALE_INTERNAL	__attribute__((visibility("hidden"))) extern
+#else
+#define LIBCLOCALE_INTERNAL	extern
+#endif
+
 /* Define HAVE_LOCAL_LIBCLOCALE for local use of libclocale
  */
 #if !defined( HAVE_LOCAL_LIBCLOCALE )
@@ -32,7 +38,7 @@
 
 #else
 #define LIBCLOCALE_EXTERN		/* extern */
-#define LIBCLOCALE_EXTERN_VARIABLE	extern
+#define LIBCLOCALE_EXTERN_VARIABLE	LIBCLOCALE_INTERNAL
 
 #endif /* !defined( HAVE_LOCAL_LIBCLOCALE ) */
 

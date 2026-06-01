@@ -32,12 +32,8 @@
 extern "C" {
 #endif
 
-#if defined( __CYGWIN__ ) && ( __GNUC__ < 10 )
-int libclocale_codepage;
-#else
 LIBCLOCALE_EXTERN_VARIABLE \
 int libclocale_codepage;
-#endif
 
 LIBCLOCALE_EXTERN \
 int libclocale_codepage_get(
