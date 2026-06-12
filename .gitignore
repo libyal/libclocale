@@ -1,6 +1,6 @@
 # Files to ignore by git
 #
-# Version: 20251129
+# Version: 20260604
 
 # Generic auto-generated build files
 *~
@@ -127,10 +127,18 @@ stamp-h[1-9]
 /libclocale.spec
 /libclocale/libclocale.rc
 /libclocale/libclocale_definitions.h
+/tests/*.dir
 /tests/*.exe
+/tests/*.log
+/tests/*.tmp
+/tests/atconfig
+/tests/atlocal
 /tests/clocale_test_codepage
 /tests/clocale_test_locale
 /tests/clocale_test_support
+/tests/package.m4
+/tests/test_library
+/tests/test_manpages
 /tests/tmp*
 
 # Local library dependencies specific files
