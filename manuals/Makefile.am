@@ -2,7 +2,7 @@ man_MANS = \
 	libclocale.3
 
 EXTRA_DIST = \
-	libclocale.3
+	$(man_MANS)
 
 DISTCLEANFILES = \
 	Makefile \
