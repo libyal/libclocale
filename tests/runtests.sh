@@ -1,21 +1,22 @@
 #!/bin/sh
 # Script to run tests
 #
-# Version: 20260609
+# Version: 20260714
 
-if test -f ${PWD}/libclocale/.libs/libclocale.1.dylib && test -f ./pyclocale/.libs/pyclocale.so
+if [ -f "${PWD}/libclocale/.libs/libclocale.1.dylib" ] && [ -f ./pyclocale/.libs/pyclocale.so ]
 then
-	install_name_tool -change /usr/local/lib/libclocale.1.dylib ${PWD}/libclocale/.libs/libclocale.1.dylib ./pyclocale/.libs/pyclocale.so
+    install_name_tool -change /usr/local/lib/libclocale.1.dylib "${PWD}/libclocale/.libs/libclocale.1.dylib" ./pyclocale/.libs/pyclocale.so
 fi
 
 make check-build > /dev/null
 
+# shellcheck disable=SC2068
 make check $@
 RESULT=$?
 
-if test ${RESULT} -ne 0
+if [ ${RESULT} -ne 0 ]
 then
-	find . -name \*.log -path \*.dir/\*/\*.log -print -exec cat {} \;
+    find . -name \*.log -path \*.dir/\*/\*.log -print -exec cat {} \;
 fi
 exit ${RESULT}
 
